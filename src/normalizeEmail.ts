@@ -15,7 +15,7 @@ const DOT_REG = /\./g;
  *     michalloler@gmail.com
  *
  */
-const normalizeEmail = (email: string) => {
+export const normalizeEmail = (email: string) => {
   const [name, host] = email.split('@');
   let [beforePlus] = name.split('+');
   beforePlus = beforePlus.replace(DOT_REG, '');
@@ -23,5 +23,3 @@ const normalizeEmail = (email: string) => {
   Number(result);
   return result;
 };
-
-export default normalizeEmail;

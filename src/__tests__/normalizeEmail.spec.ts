@@ -1,4 +1,4 @@
-import normalizeEmail from '../normalizeEmail';
+import {normalizeEmail} from '../normalizeEmail';
 
 test('lower-cases email', () => {
   const res = normalizeEmail('LOL@Gmail.Com');
