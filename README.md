@@ -1,6 +1,6 @@
-# tpl-ts-lib
+# thingies
 
-Template for TypeScript libraries.
+Useful TypeScript utilities.
 
 ## License
 
