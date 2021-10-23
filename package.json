@@ -13,7 +13,7 @@
     "node": ">=10.18"
   },
   "main": "lib/index.js",
-  "module": "esm/index.js",
+  "module": "es6/index.js",
   "files": [
     "lib/",
     "es6/",
@@ -26,7 +26,7 @@
     "prettier:diff": "prettier -l 'src/**/*.{ts,tsx,js,jsx}'",
     "tslint": "tslint 'src/**/*.{js,jsx,ts,tsx}' -t verbose",
     "lint": "yarn tslint",
-    "clean": "rimraf lib es6 esm",
+    "clean": "rimraf lib es6 es2020",
     "build:cjs": "tsc",
     "build:es6": "tsc --module commonjs --target es6 --outDir es6",
     "build:es2020": "tsc --project tsconfig.build.json --module commonjs --target es2020 --outDir es2020",
