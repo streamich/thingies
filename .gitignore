@@ -118,4 +118,4 @@ dist
 # Build folder
 lib/
 es6/
-esm/
+es2020/
