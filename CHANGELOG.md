@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/streamich/thingies/compare/v1.0.0...v1.1.0) (2021-10-23)
+
+
+### Features
+
+* 🎸 place LruMap and LruTtlMap into separate files ([36c4ba1](https://github.com/streamich/thingies/commit/36c4ba15d13234bde8f2b4aa62b19fc3ebfab0bb))
+
 # 1.0.0 (2021-10-23)
 
 
