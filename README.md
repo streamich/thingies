@@ -28,6 +28,9 @@ Useful TypeScript utilities.
   automatically when the number of queued items reaches a threshold or when a timeout
   expires since the first item was added to the queue. Useful for batching multiple
   messages or requests for bulk processing.
+- `TimedState` &mdash; works similar to `TimedQueue`, but instead of keeping track of
+  all items pushed, it invokes a reducer to update the state with the information from
+  the last pushed item.
 
 
 ## License
