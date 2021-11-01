@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/streamich/thingies/compare/v1.1.0...v1.2.0) (2021-11-01)
+
+
+### Features
+
+* 🎸 implement TimeState utility class ([7423a93](https://github.com/streamich/thingies/commit/7423a93412570a983ff1f4ef4cca202ca6401540))
+
 # [1.1.0](https://github.com/streamich/thingies/compare/v1.0.0...v1.1.0) (2021-10-23)
 
 
