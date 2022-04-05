@@ -11,12 +11,12 @@ Useful TypeScript utilities.
   which clears the memory of old items after some time.
 - `Defer` &mdash; an inverted `Promise`, an object which allows you to imperatively
   control the behavior of a `Promise`.
-- `hash` &mdash; a fast an simple utility, which hash a string to an integer. Useful
+- `hash` &mdash; a fast and simple utility, which hashes a string to an integer. Useful
   for generating a shard index of a record based on its ID.
-- `LruMap` &mdash; tiny and fast *Least Recently Used Cache* implemented on top of `Map`.
+- `LruMap` &mdash; tiny and fast *Least Recently Used Cache* implemented on top of the `Map` class.
 - `LruTtlMap` &mdash; tiny and fast *Least Recently Used Cache* with expiration timestamp
-  stored for each entry implemented on top of `LruMap`.
-- `normalizeEmail` &mdash; normalizes email by stripping put `.` and `+` characters and
+  stored for each entry implemented on top of the `LruMap` class.
+- `normalizeEmail` &mdash; normalizes email by stripping out `.` and `+` characters and
   removing everything after the `+` character and lower-casing the e-mail. Useful for
   getting an e-mail into a common form when throttling requests by e-mail.
 - `of` &mdash; returns result of a `Promise` as a 3-tuple `[value, error, isError]`.
