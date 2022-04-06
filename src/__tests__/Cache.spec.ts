@@ -2,6 +2,7 @@ import {Cache} from '../Cache';
 
 describe('Cache', () => {
   test('can instantiate', () => {
+    // tslint:disable-next-line no-unused-expression
     new Cache();
   });
 
