@@ -31,6 +31,10 @@ Useful TypeScript utilities.
 - `TimedState` &mdash; works similar to `TimedQueue`, but instead of keeping track of
   all items pushed, it invokes a reducer to update the state with the information from
   the last pushed item.
+- `tick` &mdash; returns a `Promise` which resolves after a given number of milliseconds,
+  useful for releasing the event loop for a short period of time, `await tick(5)`.
+- `until` &mdash; waits for some condition to become true `await until(() => condition)`,
+  useful when waiting for some asynchronous task to happen in a test.
 
 
 ## License
