@@ -1,4 +1,4 @@
-import { LruMap } from "./LruMap";
+import {LruMap} from './LruMap';
 
 export class LruTtlMap<K, V> extends LruMap<K, V> {
   private readonly expiry = new Map<K, number>();

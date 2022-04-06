@@ -1,4 +1,4 @@
-import {tick} from "./tick";
+import {tick} from './tick';
 
 export const until = async (check: () => boolean, pollInterval: number = 1) => {
   do {

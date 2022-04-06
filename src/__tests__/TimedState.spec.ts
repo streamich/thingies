@@ -1,7 +1,10 @@
 import {TimedState} from '../TimedState';
 
 test('can create queue', () => {
-  const queue = new TimedState<{}, []>(() => ({}), (s, i) => s);
+  const queue = new TimedState<{}, []>(
+    () => ({}),
+    (s, i) => s,
+  );
 });
 
 type CountRecord = Record<string, number>;
@@ -13,7 +16,8 @@ interface CounterState {
 type CounterItem = [key: string, increments: CountRecord];
 
 const createTimedState = (itemLimit: number = 100, timeLimit: number = 5_000) => {
-  const state = new TimedState<CounterState, CounterItem>(() => ({}),
+  const state = new TimedState<CounterState, CounterItem>(
+    () => ({}),
     (state, [key, increments]) => {
       let counts = state[key];
       if (!counts) counts = state[key] = {};
@@ -21,7 +25,8 @@ const createTimedState = (itemLimit: number = 100, timeLimit: number = 5_000) =>
         counts[counter] = (counts[counter] || 0) + increments[counter];
       }
       return state;
-    });
+    },
+  );
   state.itemLimit = itemLimit;
   state.timeLimit = timeLimit;
   return state;
@@ -41,10 +46,12 @@ test('reducer aggregates data', () => {
   state.push(['the-key', {foo: 123}]);
   state.push(['the-key', {foo: 2, bar: 3}]);
   state.flush();
-  expect(state.onFlush).toHaveBeenCalledWith({'the-key': {
-    foo: 125,
-    bar: 3,
-  }});
+  expect(state.onFlush).toHaveBeenCalledWith({
+    'the-key': {
+      foo: 125,
+      bar: 3,
+    },
+  });
 });
 
 test('can flush state', () => {
@@ -56,7 +63,7 @@ test('can flush state', () => {
   expect(state.onFlush).toHaveBeenCalledWith({
     'the-key': {
       foo: 126,
-    }
+    },
   });
   expect(state.onFlush).toHaveBeenCalledTimes(1);
   state.push(['the-key', {a: 1}]);
@@ -66,7 +73,7 @@ test('can flush state', () => {
   expect(state.onFlush).toHaveBeenCalledWith({
     'the-key': {
       a: 6,
-    }
+    },
   });
   expect(state.onFlush).toHaveBeenCalledTimes(2);
 });
@@ -87,7 +94,7 @@ test('flushes queue when item limit is reached, subsequent flush does not execut
   expect(state.onFlush).toHaveBeenCalledWith({
     a: {
       b: 10,
-    }
+    },
   });
   state.flush();
   expect(state.onFlush).toHaveBeenCalledTimes(1);
@@ -107,12 +114,12 @@ test('flushes queue multiple times', () => {
   expect(state.onFlush).toHaveBeenCalledWith({
     a: {
       b: 1,
-    }
+    },
   });
   expect(state.onFlush).toHaveBeenCalledWith({
     a: {
       b: 5,
-    }
+    },
   });
   state.push(['a', {b: 4}]);
   expect(state.onFlush).toHaveBeenCalledTimes(2);
@@ -120,7 +127,7 @@ test('flushes queue multiple times', () => {
   expect(state.onFlush).toHaveBeenCalledWith({
     a: {
       b: 4,
-    }
+    },
   });
 });
 
@@ -135,7 +142,7 @@ test('flushes when timeout is reached', (done) => {
     expect(state.onFlush).toHaveBeenCalledWith({
       a: {
         b: 6,
-      }
+      },
     });
     expect(state.onFlush).toHaveBeenCalledTimes(1);
     done();
@@ -151,7 +158,7 @@ test('flushes on timeout twice', (done) => {
     expect(state.onFlush).toHaveBeenCalledWith({
       a: {
         b: 1,
-      }
+      },
     });
     expect(state.onFlush).toHaveBeenCalledTimes(1);
     state.push(['a', {b: 2}]);
@@ -160,7 +167,7 @@ test('flushes on timeout twice', (done) => {
       expect(state.onFlush).toHaveBeenCalledWith({
         a: {
           b: 2,
-        }
+        },
       });
       expect(state.onFlush).toHaveBeenCalledTimes(2);
       done();
@@ -177,7 +184,7 @@ test('does not flush after timeout if queue is empty', (done) => {
     expect(state.onFlush).toHaveBeenCalledWith({
       a: {
         b: 1,
-      }
+      },
     });
     expect(state.onFlush).toHaveBeenCalledTimes(1);
     setTimeout(() => {
@@ -196,7 +203,7 @@ test('when flushed manually, does not flush after timeout', (done) => {
     expect(state.onFlush).toHaveBeenCalledWith({
       a: {
         b: 1,
-      }
+      },
     });
     expect(state.onFlush).toHaveBeenCalledTimes(1);
     state.push(['a', {b: 3}]);
@@ -205,7 +212,7 @@ test('when flushed manually, does not flush after timeout', (done) => {
     expect(state.onFlush).toHaveBeenCalledWith({
       a: {
         b: 3,
-      }
+      },
     });
     setTimeout(() => {
       expect(state.onFlush).toHaveBeenCalledTimes(2);
