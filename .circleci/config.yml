@@ -52,20 +52,6 @@ jobs:
           command: yarn release
       - *Post_to_dev_null
 
-  nightly:
-    <<: *container
-    steps:
-      - checkout
-      - *Versions
-      - *Install
-      - *Build
-      - *Test
-      - *Post_to_dev_null
-      - run:
-          name: Post to Slack on FAILURE
-          command: npx ci slack --channel="dev" --text="** nightly build failed :scream:" --icon_emoji=tired_face
-          when: on_fail
-
 workflows:
   version: 2
   all:
@@ -81,13 +67,6 @@ workflows:
     jobs:
       - main:
           context: common-env-vars
-          filters:
-            branches:
-              only: main
-  nightly:
-    triggers:
-      - schedule:
-          cron: '0 1 * * *'
           filters:
             branches:
               only: main
