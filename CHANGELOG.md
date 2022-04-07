@@ -1,3 +1,11 @@
+# [1.3.0](https://github.com/streamich/thingies/compare/v1.2.0...v1.3.0) (2022-04-07)
+
+
+### Features
+
+* 🎸 add index file ([2e135f8](https://github.com/streamich/thingies/commit/2e135f874a1cf3c7404e2e6cecfacbc5b38858b6))
+* 🎸 add tick() and until() methods ([caeb0b0](https://github.com/streamich/thingies/commit/caeb0b0ba1f0b659499e394e43f499e69f53f2bb))
+
 # [1.2.0](https://github.com/streamich/thingies/compare/v1.1.0...v1.2.0) (2021-11-01)
 
 
