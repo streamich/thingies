@@ -70,6 +70,3 @@ workflows:
           filters:
             branches:
               only: main
-    jobs:
-      - nightly:
-          context: common-env-vars
