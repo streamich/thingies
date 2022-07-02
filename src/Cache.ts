@@ -84,8 +84,13 @@ export class Cache<T> {
     return now - entry.t <= this.evictionTime;
   }
 
-  startGC() {
+  scheduleGC() {
     this.timer = setTimeout(this.runGC, this.gcPeriod);
+    this.timer.unref();
+  }
+
+  startGC() {
+    this.scheduleGC();
   }
 
   runGC = () => {
@@ -97,7 +102,7 @@ export class Cache<T> {
         this.entries--;
       }
     }
-    this.timer = setTimeout(this.runGC, this.gcPeriod);
+    this.scheduleGC();
   };
 
   stopGC = () => {
