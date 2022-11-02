@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/streamich/thingies/compare/v1.3.1...v1.4.0) (2022-11-02)
+
+
+### Features
+
+* 🎸 allow async check function in until() ([a545be9](https://github.com/streamich/thingies/commit/a545be94085b4c223b64ecd143569bc7c0b80529))
+
 ## [1.3.1](https://github.com/streamich/thingies/compare/v1.3.0...v1.3.1) (2022-07-02)
 
 
