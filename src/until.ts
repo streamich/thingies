@@ -1,8 +1,8 @@
 import {tick} from './tick';
 
-export const until = async (check: () => boolean, pollInterval: number = 1) => {
+export const until = async (check: () => boolean | Promise<boolean>, pollInterval: number = 1) => {
   do {
-    if (check()) return;
+    if (await check()) return;
     await tick(pollInterval);
   } while (true);
 };
