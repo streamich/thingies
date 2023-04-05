@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/streamich/thingies/compare/v1.5.0...v1.6.0) (2023-04-05)
+
+
+### Features
+
+* 🎸 expose concurrency() from index ([6a2450f](https://github.com/streamich/thingies/commit/6a2450f680d56c2becc4652e7b2c1ddf47995baf))
+
 # [1.5.0](https://github.com/streamich/thingies/compare/v1.4.0...v1.5.0) (2023-04-05)
 
 
