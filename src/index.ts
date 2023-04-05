@@ -1,5 +1,6 @@
 export * from './base64';
 export * from './Cache';
+export * from './concurrency';
 export * from './Defer';
 export * from './hash';
 export * from './LruMap';
