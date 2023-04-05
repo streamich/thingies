@@ -12,7 +12,7 @@ class Task<T = unknown> extends Defer<T> {
 /** Limits concurrency of async code. */
 export const concurrency = (limit: number) => {
   let workers = 0;
-  const queue = new Set<Task<any>>();
+  const queue = new Set<Task>();
   const work = async () => {
     const task = queue.values().next().value;
     if (!task) return; else queue.delete(task);
@@ -23,7 +23,7 @@ export const concurrency = (limit: number) => {
   };
   return async <T = unknown>(code: Code<T>): Promise<T> => {
     const task = new Task<T>(code);
-    queue.add(task);
+    queue.add(task as Task<unknown>);
     if (workers < limit) go(work);
     return task.promise;
   };
