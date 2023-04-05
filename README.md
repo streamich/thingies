@@ -75,6 +75,11 @@ Useful TypeScript utilities.
 - `until` &mdash; waits for some condition to become true `await until(() => condition)`,
   useful when waiting for some asynchronous task to happen in a test.
 
+---
+
+- `concurrency` &mdash; limits the number of concurrent executions of asynchronous
+  code.
+
 
 ## License
 
