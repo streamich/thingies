@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/streamich/thingies/compare/v1.4.0...v1.5.0) (2023-04-05)
+
+
+### Features
+
+* 🎸 add concurrency() implementation ([c195a31](https://github.com/streamich/thingies/commit/c195a318d4736f074d98b3baa265de894cb349dd))
+
 # [1.4.0](https://github.com/streamich/thingies/compare/v1.3.1...v1.4.0) (2022-11-02)
 
 
