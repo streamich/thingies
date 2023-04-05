@@ -84,3 +84,28 @@ describe('check concurrency in-flight', () => {
     });
   }
 });
+
+describe('check execution order', () => {
+  for(let limit = 1; limit <= 6; limit++) {
+    describe(`limits concurrency to ${limit}`, () => {
+      for (let i = 0; i < 10; i++) {
+        test(`${i + 1}`, async () => {
+          const limiter = concurrency(limit);
+          let expectedIndex: number = 0;
+          const create = (index: number) => {
+            return async () => {
+              if (index !== expectedIndex) throw new Error('Wrong order');
+              expectedIndex++;
+              await tick(Math.round(Math.random() * 10) + 1);
+            };
+          };
+          const promises: Promise<any>[] = [];
+          for (let i = 0; i < limit * 2; i++) {
+            promises.push(limiter(create(i)));
+          }
+          await Promise.all(promises);
+        });
+      }
+    });
+  }
+});
