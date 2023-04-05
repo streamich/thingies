@@ -15,7 +15,7 @@ export const concurrency = (limit: number) => {
   const queue = new Set<Task>();
   const work = async () => {
     const task = queue.values().next().value;
-    if (!task) return; else queue.delete(task);
+    if (task) queue.delete(task); else return;
     workers++;
     try { task.resolve(await task.code()) }
     catch (error) { task.reject(error) }
@@ -24,7 +24,6 @@ export const concurrency = (limit: number) => {
   return async <T = unknown>(code: Code<T>): Promise<T> => {
     const task = new Task<T>(code);
     queue.add(task as Task<unknown>);
-    if (workers < limit) go(work);
-    return task.promise;
+    return workers < limit && go(work), task.promise;
   };
 };
