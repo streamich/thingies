@@ -1,29 +1,33 @@
-import {Defer} from "./Defer";
-
 export type Code<T = unknown> = () => Promise<T>;
 
 /** Executes code concurrently. */
-export const go = (code: Code<unknown>): void => { code().catch(() => {}); }
+export const go = (code: Code<unknown>): void => { code().catch(() => {}) }
 
-class Task<T = unknown> extends Defer<T> {
-  constructor(public readonly code: Code<T>) { super(); }
+class Task<T = unknown> {
+  public readonly resolve!: (data: T) => void;
+  public readonly reject!: (error: any) => void;
+  public readonly promise = new Promise<T>((resolve, reject) => {
+    (this as any).resolve = resolve;
+    (this as any).reject = reject;
+  });
+  constructor(public readonly code: Code<T>) {}
 }
 
 /** Limits concurrency of async code. */
 export const concurrency = (limit: number) => {
-  let count = 0;
-  const queue: Task<any>[] = [];
-  const loop = async () => {
-    const task = queue.shift();
-    if (!task) return; else count++;
+  let workers = 0;
+  const queue = new Set<Task>();
+  const work = async () => {
+    const task = queue.values().next().value;
+    if (task) queue.delete(task); else return;
+    workers++;
     try { task.resolve(await task.code()) }
     catch (error) { task.reject(error) }
-    finally { count--, queue.length && go(loop) }
+    finally { workers--, queue.size && go(work) }
   };
   return async <T = unknown>(code: Code<T>): Promise<T> => {
-    const task = new Task<T>(code);
-    queue.push(task);
-    if (count < limit) go(loop);
-    return task.promise;
+    const task = new Task(code);
+    queue.add(task as Task<unknown>);
+    return workers < limit && go(work), task.promise;
   };
 };
