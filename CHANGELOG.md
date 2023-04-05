@@ -1,3 +1,11 @@
+# [1.7.0](https://github.com/streamich/thingies/compare/v1.6.0...v1.7.0) (2023-04-05)
+
+
+### Features
+
+* 🎸 imrprove internal queue type ([770ef26](https://github.com/streamich/thingies/commit/770ef26c1c97f9bc579190e73c0558efb044af70))
+* 🎸 use Set as a FIFO queue ([2b82a06](https://github.com/streamich/thingies/commit/2b82a06ae367bdeb227ea0bf1c7d68a6c29b694f))
+
 # [1.6.0](https://github.com/streamich/thingies/compare/v1.5.0...v1.6.0) (2023-04-05)
 
 
