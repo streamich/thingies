@@ -1,3 +1,11 @@
+# [1.10.0](https://github.com/streamich/thingies/compare/v1.9.0...v1.10.0) (2023-04-07)
+
+
+### Features
+
+* 🎸 add [@mutex](https://github.com/mutex) decorator ([309e3de](https://github.com/streamich/thingies/commit/309e3de8d296c2fccee6e3f58f40e1e803fa2603))
+* 🎸 export [@mutex](https://github.com/mutex) ([0aa12e9](https://github.com/streamich/thingies/commit/0aa12e9d5ebffcb440bd9b1bd3bb27819388674c))
+
 # [1.9.0](https://github.com/streamich/thingies/compare/v1.8.0...v1.9.0) (2023-04-07)
 
 
