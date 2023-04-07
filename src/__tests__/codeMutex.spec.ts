@@ -1,4 +1,4 @@
-import {codeMutex} from '../concurrency';
+import {codeMutex} from '../codeMutex';
 import {tick} from '../tick';
 
 test('can execute code sequentially', async () => {
