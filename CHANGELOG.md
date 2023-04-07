@@ -1,3 +1,10 @@
+## [1.10.1](https://github.com/streamich/thingies/compare/v1.10.0...v1.10.1) (2023-04-07)
+
+
+### Bug Fixes
+
+* 🐛 do not remove comments ([201fb98](https://github.com/streamich/thingies/commit/201fb9895923b12848dc9027cc478c2e2070a86e))
+
 # [1.10.0](https://github.com/streamich/thingies/compare/v1.9.0...v1.10.0) (2023-04-07)
 
 
