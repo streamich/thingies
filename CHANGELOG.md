@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/streamich/thingies/compare/v1.8.0...v1.9.0) (2023-04-07)
+
+
+### Features
+
+* 🎸 improve codeMutex() interface ([cb85955](https://github.com/streamich/thingies/commit/cb8595551ef51d66e94090a86dde1211b9c0835d))
+
 # [1.8.0](https://github.com/streamich/thingies/compare/v1.7.0...v1.8.0) (2023-04-07)
 
 
