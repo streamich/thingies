@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/streamich/thingies/compare/v1.7.0...v1.8.0) (2023-04-07)
+
+
+### Features
+
+* 🎸 add codeMutex() ([4dccf86](https://github.com/streamich/thingies/commit/4dccf862ac3ebed4c6cdb07ebae0db7bdf9cbd8a))
+
 # [1.7.0](https://github.com/streamich/thingies/compare/v1.6.0...v1.7.0) (2023-04-05)
 
 
