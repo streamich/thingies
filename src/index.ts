@@ -7,6 +7,7 @@ export * from './go';
 export * from './hash';
 export * from './LruMap';
 export * from './LruTtlMap';
+export * from './mutex';
 export * from './normalizeEmail';
 export * from './of';
 export * from './promiseMap';
