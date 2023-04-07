@@ -80,6 +80,12 @@ Useful TypeScript utilities.
 - `concurrency` &mdash; limits the number of concurrent executions of asynchronous
   code.
 
+---
+
+- `codeMutex` &mdash; a mutex which can be used to synchronize code execution. Code
+  wrapped by this mutex will execute only one at a time, for all parallel calls to
+  the same mutex.
+
 
 ## License
 
