@@ -1,7 +1,9 @@
 export * from './base64';
 export * from './Cache';
+export * from './codeMutex';
 export * from './concurrency';
 export * from './Defer';
+export * from './go';
 export * from './hash';
 export * from './LruMap';
 export * from './LruTtlMap';
@@ -12,4 +14,5 @@ export * from './randomStr';
 export * from './tick';
 export * from './TimedQueue';
 export * from './TimedState';
+export * from './types';
 export * from './until';

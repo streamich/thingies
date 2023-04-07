@@ -1,7 +1,5 @@
-export type Code<T = unknown> = () => Promise<T>;
-
-/** Executes code concurrently. */
-export const go = (code: Code<unknown>): void => { code().catch(() => {}) }
+import {go} from "./go";
+import type {Code} from "./types";
 
 class Task<T = unknown> {
   public readonly resolve!: (data: T) => void;
@@ -29,18 +27,5 @@ export const concurrency = (limit: number) => {
     const task = new Task(code);
     queue.add(task as Task<unknown>);
     return workers < limit && go(work), task.promise;
-  };
-};
-
-/**
- * Executes only one instance of give code at a time. If other calls come in in
- * parallel, they get resolved to the result of the ongoing execution.
- */
-export const codeMutex = <T>(code: Code<T>): Code<T> => {
-  let result: Promise<T> | undefined;
-  return async (): Promise<T> => {
-    if (result) return result;
-    try { return await (result = code()) }
-    finally { result = undefined }
   };
 };
