@@ -31,3 +31,16 @@ export const concurrency = (limit: number) => {
     return workers < limit && go(work), task.promise;
   };
 };
+
+/**
+ * Executes only one instance of give code at a time. If other calls come in in
+ * parallel, they get resolved to the result of the ongoing execution.
+ */
+export const codeMutex = <T>(code: Code<T>): Code<T> => {
+  let result: Promise<T> | undefined;
+  return async (): Promise<T> => {
+    if (result) return result;
+    try { return await (result = code()) }
+    finally { result = undefined }
+  };
+};
