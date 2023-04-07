@@ -86,6 +86,9 @@ Useful TypeScript utilities.
   wrapped by this mutex will execute only one at a time, for all parallel calls to
   the same mutex.
 
+- `@mutex` and `mutex()` &mdash; same as `codeMutex`, but can be used as a decorator
+  or a higher order function.
+
 
 ## License
 
