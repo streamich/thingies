@@ -1,4 +1,6 @@
-import type {Code} from "./types";
+import type {Code} from './types';
 
 /** Executes code concurrently. */
-export const go = <T>(code: Code<T>): void => { code().catch(() => {}) }
+export const go = <T>(code: Code<T>): void => {
+  code().catch(() => {});
+};

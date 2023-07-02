@@ -1,5 +1,5 @@
-import {go} from "./go";
-import type {Code} from "./types";
+import {go} from './go';
+import type {Code} from './types';
 
 class Task<T = unknown> {
   public readonly resolve!: (data: T) => void;
@@ -17,11 +17,16 @@ export const concurrency = (limit: number) => {
   const queue = new Set<Task>();
   const work = async () => {
     const task = queue.values().next().value;
-    if (task) queue.delete(task); else return;
+    if (task) queue.delete(task);
+    else return;
     workers++;
-    try { task.resolve(await task.code()) }
-    catch (error) { task.reject(error) }
-    finally { workers--, queue.size && go(work) }
+    try {
+      task.resolve(await task.code());
+    } catch (error) {
+      task.reject(error);
+    } finally {
+      workers--, queue.size && go(work);
+    }
   };
   return async <T = unknown>(code: Code<T>): Promise<T> => {
     const task = new Task(code);

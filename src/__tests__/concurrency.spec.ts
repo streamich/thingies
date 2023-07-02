@@ -11,10 +11,7 @@ test('can execute one function with limit 1', async () => {
   expect(res).toStrictEqual([123]);
   await limit1(create(456));
   expect(res).toStrictEqual([123, 456]);
-  await Promise.all([
-    limit1(create(1)),
-    limit1(create(2)),
-  ]);
+  await Promise.all([limit1(create(1)), limit1(create(2))]);
   expect(res).toStrictEqual([123, 456, 1, 2]);
 });
 
@@ -54,7 +51,7 @@ describe('limits concurrency to 1', () => {
 });
 
 describe('check concurrency in-flight', () => {
-  for(let limit = 1; limit <= 6; limit++) {
+  for (let limit = 1; limit <= 6; limit++) {
     describe(`limits concurrency to ${limit}`, () => {
       for (let i = 0; i < 10; i++) {
         test(`${i + 1}`, async () => {
@@ -86,7 +83,7 @@ describe('check concurrency in-flight', () => {
 });
 
 describe('check execution order', () => {
-  for(let limit = 1; limit <= 6; limit++) {
+  for (let limit = 1; limit <= 6; limit++) {
     describe(`limits concurrency to ${limit}`, () => {
       for (let i = 0; i < 10; i++) {
         test(`${i + 1}`, async () => {

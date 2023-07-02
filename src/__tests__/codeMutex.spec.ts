@@ -14,23 +14,11 @@ test('executing code in parallel results in one execution of the code', async ()
   const mutex = codeMutex();
   const code = async () => cnt++;
   const code2 = async () => mutex(code);
-  const res = await Promise.all([
-    code2(),
-    code2(),
-    code2(),
-  ]);
+  const res = await Promise.all([code2(), code2(), code2()]);
   expect(res).toStrictEqual([0, 0, 0]);
-  const res2 = await Promise.all([
-    code2(),
-    code2(),
-    code2(),
-    code2(),
-  ]);
+  const res2 = await Promise.all([code2(), code2(), code2(), code2()]);
   expect(res2).toStrictEqual([1, 1, 1, 1]);
-  const res3 = await Promise.all([
-    code2(),
-    code2(),
-  ]);
+  const res3 = await Promise.all([code2(), code2()]);
   expect(res3).toStrictEqual([2, 2]);
   const res4 = await code2();
   expect(res4).toStrictEqual(3);
@@ -41,11 +29,7 @@ test('can limit concurrency of a part of a function', async () => {
   const code = async () => {
     return await mutex(async () => Math.random());
   };
-  const res = await Promise.all([
-    code(),
-    code(),
-    code(),
-  ]);
+  const res = await Promise.all([code(), code(), code()]);
   expect(res[0]).not.toBe(0);
   expect(res[0]).toBe(res[1]);
   expect(res[1]).toBe(res[2]);
@@ -69,16 +53,7 @@ test('can limit concurrency of a part of a function - 2', async () => {
       inside--;
     });
   };
-  await Promise.all([
-    code(),
-    code(),
-    code(),
-    code(),
-    code(),
-    code(),
-    code(),
-    code(),
-  ]);
+  await Promise.all([code(), code(), code(), code(), code(), code(), code(), code()]);
 });
 
 test('passes through errors', async () => {
