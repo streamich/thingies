@@ -1,3 +1,10 @@
+# [1.12.0](https://github.com/streamich/thingies/compare/v1.11.1...v1.12.0) (2023-07-02)
+
+
+### Features
+
+* 🎸 add loadCss() method ([e44534d](https://github.com/streamich/thingies/commit/e44534de862094f361123552f9fb6abeeb4a29b2))
+
 ## [1.10.1](https://github.com/streamich/thingies/compare/v1.10.0...v1.10.1) (2023-04-07)
 
 
