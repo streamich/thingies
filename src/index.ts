@@ -5,6 +5,7 @@ export * from './concurrency';
 export * from './Defer';
 export * from './go';
 export * from './hash';
+export * from './loadCss';
 export * from './LruMap';
 export * from './LruTtlMap';
 export * from './mutex';

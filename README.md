@@ -89,6 +89,11 @@ Useful TypeScript utilities.
 - `@mutex` and `mutex()` &mdash; same as `codeMutex`, but can be used as a decorator
   or a higher order function.
 
+---
+
+- `loadCss` &mdash; loads a CSS file into the DOM, given a URL. Does nothing on the
+  server.
+
 
 ## License
 
