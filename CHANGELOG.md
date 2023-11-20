@@ -1,3 +1,10 @@
+# [1.13.0](https://github.com/streamich/thingies/compare/v1.12.0...v1.13.0) (2023-11-20)
+
+
+### Features
+
+* 🎸 add dataUri() utility ([d2784ae](https://github.com/streamich/thingies/commit/d2784ae766da67cedf1d0ca08d2994c0cd4ae4d1))
+
 # [1.12.0](https://github.com/streamich/thingies/compare/v1.11.1...v1.12.0) (2023-07-02)
 
 
