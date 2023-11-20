@@ -94,6 +94,10 @@ Useful TypeScript utilities.
 - `loadCss` &mdash; loads a CSS file into the DOM, given a URL. Does nothing on the
   server.
 
+---
+
+- `dataUri` &mdash; converts a string to a data URI.
+
 
 ## License
 

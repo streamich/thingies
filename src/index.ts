@@ -2,6 +2,7 @@ export * from './base64';
 export * from './Cache';
 export * from './codeMutex';
 export * from './concurrency';
+export * from './dataUri';
 export * from './Defer';
 export * from './go';
 export * from './hash';
