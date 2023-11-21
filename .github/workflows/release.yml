@@ -19,6 +19,7 @@ jobs:
           cache: yarn
       - run: yarn
       - run: yarn test
+      - run: yarn build
       - name: Semantic Release
         uses: cycjimmy/semantic-release-action@v4
         env:
