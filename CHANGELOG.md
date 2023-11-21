@@ -1,3 +1,10 @@
+## [1.13.1](https://github.com/streamich/thingies/compare/v1.13.0...v1.13.1) (2023-11-21)
+
+
+### Bug Fixes
+
+* 🐛 produce build artifacts in release ([11a3e77](https://github.com/streamich/thingies/commit/11a3e776a7980c7b34f45caf454a14f127ebdad9))
+
 # [1.13.0](https://github.com/streamich/thingies/compare/v1.12.0...v1.13.0) (2023-11-20)
 
 
