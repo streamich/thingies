@@ -35,5 +35,11 @@
     "src/**/__mocks__/**/*.*",
     "*.test.ts",
     "*.spec.ts"
-  ]
+  ],
+  "typedocOptions": {
+    "entryPoints": [
+      "src/index.ts",
+    ],
+    "out": "typedocs"
+  }
 }
