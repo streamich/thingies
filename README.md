@@ -1,6 +1,6 @@
 # thingies
 
-Useful TypeScript utilities.
+Useful TypeScript utilities. [__Documentation__](https://streamich.github.io/thingies).
 
 
 ## Menu
