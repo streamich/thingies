@@ -2,7 +2,7 @@ export type FanOutUnsubscribe = () => void;
 export type FanOutListener<D> = (data: D) => void;
 
 export class FanOut<D> {
-  private readonly listeners = new Set<FanOutListener<D>>();
+  protected readonly listeners = new Set<FanOutListener<D>>();
 
   public emit(data: D): void {
     this.listeners.forEach(listener => listener(data));
