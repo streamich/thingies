@@ -1,3 +1,10 @@
+## [1.14.1](https://github.com/streamich/thingies/compare/v1.14.0...v1.14.1) (2023-11-24)
+
+
+### Bug Fixes
+
+* 🐛 make .listeners protected ([16aed9a](https://github.com/streamich/thingies/commit/16aed9a2c0bafc457b8fdb0204a084e1e8e728ae))
+
 # [1.14.0](https://github.com/streamich/thingies/compare/v1.13.1...v1.14.0) (2023-11-24)
 
 
