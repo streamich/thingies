@@ -1,3 +1,10 @@
+# [1.14.0](https://github.com/streamich/thingies/compare/v1.13.1...v1.14.0) (2023-11-24)
+
+
+### Features
+
+* 🎸 add FanOut implementation ([018bfb0](https://github.com/streamich/thingies/commit/018bfb09b150c31f7ca51c3fb96d61a465dfcfcc))
+
 ## [1.13.1](https://github.com/streamich/thingies/compare/v1.13.0...v1.13.1) (2023-11-21)
 
 
