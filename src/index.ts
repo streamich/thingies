@@ -4,6 +4,7 @@ export * from './codeMutex';
 export * from './concurrency';
 export * from './dataUri';
 export * from './Defer';
+export * from './fanout';
 export * from './go';
 export * from './hash';
 export * from './loadCss';

@@ -98,6 +98,11 @@ Useful TypeScript utilities.
 
 - `dataUri` &mdash; converts a string to a data URI.
 
+---
+
+- `FanOut` &mdash; a class which allows to fan out a single event to multiple
+  listeners. Useful for implementing event emitters. In just 12 lines of code.
+
 
 ## License
 
