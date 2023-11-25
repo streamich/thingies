@@ -1,3 +1,10 @@
+## [1.14.2](https://github.com/streamich/thingies/compare/v1.14.1...v1.14.2) (2023-11-25)
+
+
+### Bug Fixes
+
+* 🐛 make FanOut listeners public ([4a7e546](https://github.com/streamich/thingies/commit/4a7e5460362fe929dc8ccb1ac35cc5f3d22a6469))
+
 ## [1.14.1](https://github.com/streamich/thingies/compare/v1.14.0...v1.14.1) (2023-11-24)
 
 
