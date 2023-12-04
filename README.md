@@ -103,6 +103,13 @@ Useful TypeScript utilities. [__Documentation__](https://streamich.github.io/thi
 - `FanOut` &mdash; a class which allows to fan out a single event to multiple
   listeners. Useful for implementing event emitters. In just 12 lines of code.
 
+---
+
+- `createRace` &mdash; constructs a "race" function, which takes a function as
+  a single argument, the function is executed immediately only if no other
+  function is currently executing. If another function is currently executing,
+  the current function is discarded.
+
 
 ## License
 
