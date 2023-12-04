@@ -1,3 +1,10 @@
+# [1.15.0](https://github.com/streamich/thingies/compare/v1.14.2...v1.15.0) (2023-12-04)
+
+
+### Features
+
+* 🎸 add createRace() utility ([c835bb2](https://github.com/streamich/thingies/commit/c835bb27d3afb2542ba49f88234bf3ece1520f0e))
+
 ## [1.14.2](https://github.com/streamich/thingies/compare/v1.14.1...v1.14.2) (2023-11-25)
 
 
