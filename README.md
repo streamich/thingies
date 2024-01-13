@@ -110,6 +110,12 @@ Useful TypeScript utilities. [__Documentation__](https://streamich.github.io/thi
   function is currently executing. If another function is currently executing,
   the current function is discarded.
 
+---
+
+- `xorShift32` &mdash; generates random 32-bit integers using the very fast xorshift
+  algorithm. `makeXorShift32(seed)` returns a function which can be used to generate
+  random numbers.
+
 
 ## License
 
