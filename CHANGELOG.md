@@ -1,3 +1,10 @@
+# [1.16.0](https://github.com/streamich/thingies/compare/v1.15.0...v1.16.0) (2024-01-13)
+
+
+### Features
+
+* 🎸 add xosrshift implementation ([e32a638](https://github.com/streamich/thingies/commit/e32a6387a7f67de5585c4305bba5d297892e48f1))
+
 # [1.15.0](https://github.com/streamich/thingies/compare/v1.14.2...v1.15.0) (2023-12-04)
 
 
