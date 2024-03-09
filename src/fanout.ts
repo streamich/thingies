@@ -5,7 +5,7 @@ export class FanOut<D> {
   public readonly listeners = new Set<FanOutListener<D>>();
 
   public emit(data: D): void {
-    this.listeners.forEach(listener => listener(data));
+    this.listeners.forEach((listener) => listener(data));
   }
 
   public listen(listener: FanOutListener<D>): FanOutUnsubscribe {

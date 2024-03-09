@@ -5,5 +5,4 @@
  * @param mime The MIME type of the data.
  * @returns The data URI.
  */
-export const dataUri = (data: string, mime: string): string =>
-  `data:${mime};utf8,${encodeURIComponent(data)}`;
+export const dataUri = (data: string, mime: string): string => `data:${mime};utf8,${encodeURIComponent(data)}`;
