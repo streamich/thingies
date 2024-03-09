@@ -1,3 +1,10 @@
+# [1.17.0](https://github.com/streamich/thingies/compare/v1.16.0...v1.17.0) (2024-03-09)
+
+
+### Features
+
+* 🎸 add support for arguments in mutex decorator ([7095e93](https://github.com/streamich/thingies/commit/7095e938c81b1abf7a61c26c0f715004054bca36))
+
 # [1.16.0](https://github.com/streamich/thingies/compare/v1.15.0...v1.16.0) (2024-01-13)
 
 
