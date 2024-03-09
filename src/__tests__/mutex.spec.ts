@@ -38,3 +38,17 @@ test('works as a class method decorator', async () => {
   const res4 = await test.code();
   expect(res4).toStrictEqual(3);
 });
+
+test('passes through arguments in the decorated method', async () => {
+  let cnt = 0;
+  class Test {
+    @mutex async code(divisor: number) {
+      return cnt++ / divisor;
+    }
+  }
+  const test = new Test();
+  const res = await Promise.all([test.code(10), test.code(10), test.code(10)]);
+  expect(res).toStrictEqual([0, 0, 0]);
+  const res2 = await Promise.all([test.code(10), test.code(10), test.code(10), test.code(10)]);
+  expect(res2).toStrictEqual([0.1, 0.1, 0.1, 0.1]);
+});
