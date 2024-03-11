@@ -47,13 +47,7 @@ describe('limits concurrency to 1', () => {
         }
       }
       const a = new A();
-      await Promise.all([
-        a.create(1),
-        a.create(2),
-        a.create(3),
-        a.create(4),
-        a.create(5),
-      ]);
+      await Promise.all([a.create(1), a.create(2), a.create(3), a.create(4), a.create(5)]);
       expect(res).toStrictEqual([1, 2, 3, 4, 5]);
     });
   }

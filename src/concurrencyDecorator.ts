@@ -15,4 +15,4 @@ export function concurrency<This, Args extends any[], Return>(limit: number) {
       return limiter(async () => await target.call(this, ...args));
     };
   };
-};
+}
