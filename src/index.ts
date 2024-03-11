@@ -2,6 +2,7 @@ export * from './base64';
 export * from './Cache';
 export * from './codeMutex';
 export * from './concurrency';
+export {concurrency as concurrencyDecorator} from './concurrencyDecorator';
 export * from './dataUri';
 export * from './Defer';
 export * from './fanout';

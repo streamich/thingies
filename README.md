@@ -78,7 +78,8 @@ Useful TypeScript utilities. [__Documentation__](https://streamich.github.io/thi
 ---
 
 - `concurrency` &mdash; limits the number of concurrent executions of asynchronous
-  code.
+  code. `concurrencyDecorator` limits the number of concurrent executions of a
+  class method.
 
 ---
 
