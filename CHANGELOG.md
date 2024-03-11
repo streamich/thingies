@@ -1,3 +1,10 @@
+# [1.18.0](https://github.com/streamich/thingies/compare/v1.17.0...v1.18.0) (2024-03-11)
+
+
+### Features
+
+* 🎸 implement concurrency() class method decorator ([1e00c9e](https://github.com/streamich/thingies/commit/1e00c9e8b4d1b15230f34c26e140b1d3362eff6a))
+
 # [1.17.0](https://github.com/streamich/thingies/compare/v1.16.0...v1.17.0) (2024-03-09)
 
 
