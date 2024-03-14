@@ -1,3 +1,10 @@
+## [1.19.1](https://github.com/streamich/thingies/compare/v1.19.0...v1.19.1) (2024-03-14)
+
+
+### Bug Fixes
+
+* 🐛 correctly store execution results in once decorator ([9c6d49d](https://github.com/streamich/thingies/commit/9c6d49d603305ef2a3cd3b693838d07ccf25e215))
+
 # [1.19.0](https://github.com/streamich/thingies/compare/v1.18.0...v1.19.0) (2024-03-14)
 
 
