@@ -1,6 +1,8 @@
 import {go} from './go';
 import type {Code} from './types';
 
+/* tslint:disable */
+
 class Task<T = unknown> {
   public readonly resolve!: (data: T) => void;
   public readonly reject!: (error: any) => void;
