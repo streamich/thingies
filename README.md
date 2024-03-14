@@ -92,6 +92,11 @@ Useful TypeScript utilities. [__Documentation__](https://streamich.github.io/thi
 
 ---
 
+- `once` &mdash; a class method decorator, which limits method execution to once
+  per instance. Returns the result of the first execution for all subsequent calls.
+
+---
+
 - `loadCss` &mdash; loads a CSS file into the DOM, given a URL. Does nothing on the
   server.
 
