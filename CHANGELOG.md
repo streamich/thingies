@@ -1,3 +1,10 @@
+# [1.19.0](https://github.com/streamich/thingies/compare/v1.18.0...v1.19.0) (2024-03-14)
+
+
+### Features
+
+* 🎸 implement "once" class method decorator ([d1434ae](https://github.com/streamich/thingies/commit/d1434ae30f9b901ad1a48319ee0eb548ffbf7a38))
+
 # [1.18.0](https://github.com/streamich/thingies/compare/v1.17.0...v1.18.0) (2024-03-11)
 
 
