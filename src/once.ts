@@ -10,7 +10,7 @@ export function once<This, Args extends any[], Return>(
 ) {
   return function (this: This, ...args: Args): Return {
     let map = instances.get(this);
-    if (!map) instances.set(this, map = new WeakMap<any, any>());
+    if (!map) instances.set(this, (map = new WeakMap<any, any>()));
     if (!map.has(fn)) map.set(fn, fn.apply(this, args));
     return map.get(fn);
   };

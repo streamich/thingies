@@ -70,7 +70,7 @@ test(`limits concurrency separately per instance`, async () => {
   const resA: number[] = [];
   const resB: number[] = [];
   class A {
-    constructor (protected res: number[]) {}
+    constructor(protected res: number[]) {}
     @concurrency(2)
     async a(timeout: number) {
       await tick(timeout);

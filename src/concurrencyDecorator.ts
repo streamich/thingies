@@ -14,7 +14,7 @@ export function concurrency<This, Args extends any[], Return>(limit: number) {
   ) => {
     return async function (this: This, ...args: Args): Promise<Return> {
       let map = instances.get(this);
-      if (!map) instances.set(this, map = new WeakMap<any, any>());
+      if (!map) instances.set(this, (map = new WeakMap<any, any>()));
       if (!map.has(fn)) map.set(fn, _concurrency(limit));
       return map.get(fn)!(async () => await fn.call(this, ...args));
     };
