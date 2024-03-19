@@ -1,5 +1,7 @@
 import {concurrency as _concurrency} from './concurrency';
 
+const instances = new WeakMap<any, WeakMap<any, any>>();
+
 /**
  * A class method decorator that limits the concurrency of the method to the
  * given number of parallel executions. All invocations are queued and executed
@@ -7,12 +9,14 @@ import {concurrency as _concurrency} from './concurrency';
  */
 export function concurrency<This, Args extends any[], Return>(limit: number) {
   return (
-    target: (this: This, ...args: Args) => Promise<Return>,
+    fn: (this: This, ...args: Args) => Promise<Return>,
     context?: ClassMethodDecoratorContext<This, (this: This, ...args: Args) => Promise<Return>>,
   ) => {
-    const limiter = _concurrency(limit);
     return async function (this: This, ...args: Args): Promise<Return> {
-      return limiter(async () => await target.call(this, ...args));
+      let map = instances.get(this);
+      if (!map) instances.set(this, (map = new WeakMap<any, any>()));
+      if (!map.has(fn)) map.set(fn, _concurrency(limit));
+      return map.get(fn)!(async () => await fn.call(this, ...args));
     };
   };
 }

@@ -1,4 +1,5 @@
 import {mutex} from '../mutex';
+import {tick} from '../tick';
 
 test('can execute code sequentially', async () => {
   const code = async () => 123;
@@ -51,4 +52,37 @@ test('passes through arguments in the decorated method', async () => {
   expect(res).toStrictEqual([0, 0, 0]);
   const res2 = await Promise.all([test.code(10), test.code(10), test.code(10), test.code(10)]);
   expect(res2).toStrictEqual([0.1, 0.1, 0.1, 0.1]);
+});
+
+test('is applied per method', async () => {
+  class Test {
+    @mutex async echo(value: any) {
+      await tick(1);
+      return value;
+    }
+    @mutex async echo2(value: any) {
+      await tick(1);
+      return value;
+    }
+  }
+  const a = new Test();
+  const p1 = a.echo(1);
+  const p2 = a.echo2(2);
+  expect(await p1).toBe(1);
+  expect(await p2).toBe(2);
+});
+
+test('is applied per instance', async () => {
+  class Test {
+    @mutex async echo(value: any) {
+      await tick(1);
+      return value;
+    }
+  }
+  const a1 = new Test();
+  const a2 = new Test();
+  const p1 = a1.echo(1);
+  const p2 = a2.echo(2);
+  expect(await p1).toBe(1);
+  expect(await p2).toBe(2);
 });
