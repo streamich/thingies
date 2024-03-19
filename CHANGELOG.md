@@ -1,3 +1,16 @@
+## [1.19.2](https://github.com/streamich/thingies/compare/v1.19.1...v1.19.2) (2024-03-19)
+
+
+### Bug Fixes
+
+* 🐛 limit mutex scope to a single class instance ([c994280](https://github.com/streamich/thingies/commit/c9942801490a62c547b34a881829e8c65322ffa8))
+* 🐛 make concurrency() decorator apply per class instance ([839c898](https://github.com/streamich/thingies/commit/839c898dfe324fd47deac1c65d5c33fd73357048))
+
+
+### Performance Improvements
+
+* ⚡️ improve once() decorator ([c50e19f](https://github.com/streamich/thingies/commit/c50e19f37bc3cd4359b8eecc95a8bdb0ede479ad))
+
 ## [1.19.1](https://github.com/streamich/thingies/compare/v1.19.0...v1.19.1) (2024-03-14)
 
 
