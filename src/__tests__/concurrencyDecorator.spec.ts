@@ -35,6 +35,65 @@ test('can execute one function with limit 10', async () => {
   expect(res).toStrictEqual([123, 456, 1]);
 });
 
+test(`limits concurrency separately per method`, async () => {
+  const resA: number[] = [];
+  const resB: number[] = [];
+  class A {
+    @concurrency(2)
+    async a(timeout: number) {
+      await tick(timeout);
+      resA.push(timeout);
+    }
+    @concurrency(3)
+    async b(timeout: number) {
+      await tick(timeout);
+      resB.push(timeout);
+    }
+  }
+  const promises: Promise<any>[] = [];
+  const a = new A();
+  promises.push(a.a(3));
+  promises.push(a.a(4));
+  promises.push(a.a(10));
+  promises.push(a.b(2));
+  promises.push(a.b(3));
+  promises.push(a.b(4));
+  await tick(5);
+  expect(resA).toStrictEqual([3, 4]);
+  expect(resB).toStrictEqual([2, 3, 4]);
+  await Promise.all(promises);
+  expect(resA).toStrictEqual([3, 4, 10]);
+  expect(resB).toStrictEqual([2, 3, 4]);
+});
+
+test(`limits concurrency separately per instance`, async () => {
+  const resA: number[] = [];
+  const resB: number[] = [];
+  class A {
+    constructor (protected res: number[]) {}
+    @concurrency(2)
+    async a(timeout: number) {
+      await tick(timeout);
+      this.res.push(timeout);
+    }
+  }
+  const promises: Promise<any>[] = [];
+  const a = new A(resA);
+  const b = new A(resB);
+  promises.push(a.a(4));
+  promises.push(a.a(4));
+  promises.push(a.a(10));
+  promises.push(b.a(3));
+  promises.push(b.a(3));
+  promises.push(b.a(11));
+  await tick(5);
+  expect(resA).toStrictEqual([4, 4]);
+  expect(resB).toStrictEqual([3, 3]);
+  await Promise.all(promises);
+  expect(resA).toStrictEqual([4, 4, 10]);
+  expect(resB).toStrictEqual([3, 3, 11]);
+});
+
 describe('limits concurrency to 1', () => {
   for (let i = 0; i < 10; i++) {
     test(`${i + 1}`, async () => {
