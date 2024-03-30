@@ -1,3 +1,10 @@
+## [1.19.3](https://github.com/streamich/thingies/compare/v1.19.2...v1.19.3) (2024-03-30)
+
+
+### Bug Fixes
+
+* 🐛 allow different return type per racer ([ffc3b89](https://github.com/streamich/thingies/commit/ffc3b89af7179a48cd4bf333359fe05d1af7c429))
+
 ## [1.19.2](https://github.com/streamich/thingies/compare/v1.19.1...v1.19.2) (2024-03-19)
 
 
