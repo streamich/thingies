@@ -35,7 +35,7 @@ test('concurrently executes only the first function', () => {
 });
 
 test('returns result of the function', () => {
-  const race = createRace<number>();
+  const race = createRace();
   const fn1 = jest.fn(() => 1);
   const fn2 = jest.fn(() => 2);
   expect(fn1).toHaveBeenCalledTimes(0);

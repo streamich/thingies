@@ -24,9 +24,9 @@
  *
  * @returns A "race" function that will only invoke the first function passed to it.
  */
-export const createRace = <T>() => {
+export const createRace = () => {
   let invoked: boolean = false;
-  return (fn: () => T): T | undefined => {
+  return <T>(fn: () => T): T | undefined => {
     if (invoked) return;
     invoked = true;
     try {
