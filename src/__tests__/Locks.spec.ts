@@ -75,10 +75,17 @@ describe('.lock()', () => {
   test('should acquire lock with timeout', async () => {
     const locks = new Locks({});
     const fn = jest.fn();
-    locks.lock('my-lock', 50)(async () => {
+    locks.lock(
+      'my-lock',
+      50,
+    )(async () => {
       await tick(50);
     });
-    await locks.lock('my-lock', 50, 100)(async () => {
+    await locks.lock(
+      'my-lock',
+      50,
+      100,
+    )(async () => {
       fn();
     });
     expect(fn).toHaveBeenCalledTimes(1);
@@ -86,7 +93,10 @@ describe('.lock()', () => {
 
   test('should throw when lock was not acquired within the specified timeout', async () => {
     const locks = new Locks({});
-    locks.lock('my-lock', 10)(async () => {
+    locks.lock(
+      'my-lock',
+      10,
+    )(async () => {
       await tick(10);
     });
     try {
@@ -101,19 +111,34 @@ describe('.lock()', () => {
     const locks = new Locks({});
     const items: number[] = [];
     await Promise.all([
-      locks.lock('my-lock', 50)(async () => {
+      locks.lock(
+        'my-lock',
+        50,
+      )(async () => {
         await tick(5);
         items.push(1);
       }),
-      locks.lock('my-lock', 50, 200)(async () => {
+      locks.lock(
+        'my-lock',
+        50,
+        200,
+      )(async () => {
         await tick(5);
         items.push(2);
       }),
-      locks.lock('my-lock', 50, 200)(async () => {
+      locks.lock(
+        'my-lock',
+        50,
+        200,
+      )(async () => {
         await tick(5);
         items.push(3);
       }),
-      locks.lock('my-lock', 50, 200)(async () => {
+      locks.lock(
+        'my-lock',
+        50,
+        200,
+      )(async () => {
         await tick(5);
         items.push(4);
       }),
