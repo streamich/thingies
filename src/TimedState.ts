@@ -18,7 +18,10 @@ export class TimedState<S, I> {
    */
   public onFlush: (state: S) => void = () => {};
 
-  constructor(protected readonly initState: () => S, protected readonly reducer: (state: S, item: I) => S) {}
+  constructor(
+    protected readonly initState: () => S,
+    protected readonly reducer: (state: S, item: I) => S,
+  ) {}
 
   protected length: number = 0;
   protected state: S = this.initState();

@@ -122,6 +122,12 @@ Useful TypeScript utilities. [__Documentation__](https://streamich.github.io/thi
   algorithm. `makeXorShift32(seed)` returns a function which can be used to generate
   random numbers.
 
+---
+
+- `Locks` &mdash; a lock manager, which allows to acquire an exclusive lock in
+browser across multiple tabs. Acquires a lock by writing to `localStorage` for
+a specific key for a specified duration.
+
 
 ## License
 
