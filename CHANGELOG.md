@@ -1,3 +1,11 @@
+# [1.20.0](https://github.com/streamich/thingies/compare/v1.19.3...v1.20.0) (2024-04-01)
+
+
+### Features
+
+* 🎸 add Locks implementation ([fc8c1d6](https://github.com/streamich/thingies/commit/fc8c1d643259e518dc2ab0a116ea5a69fc09ee0d))
+* 🎸 improve locking interface ([171797b](https://github.com/streamich/thingies/commit/171797bb49c6a5751a26c93d80ad83a19d50c89f))
+
 ## [1.19.3](https://github.com/streamich/thingies/compare/v1.19.2...v1.19.3) (2024-03-30)
 
 
