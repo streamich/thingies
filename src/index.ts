@@ -10,6 +10,7 @@ export * from './fanout';
 export * from './go';
 export * from './hash';
 export * from './loadCss';
+export * from './Locks';
 export * from './LruMap';
 export * from './LruTtlMap';
 export * from './mutex';
