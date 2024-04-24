@@ -31,7 +31,7 @@
     "build:es6": "tsc --module commonjs --target es6 --outDir es6",
     "build:es2020": "tsc --project tsconfig.build.json --module commonjs --target es2020 --outDir es2020",
     "build": "yarn build:cjs && yarn build:es6 && yarn build:es2020",
-    "test": "jest --no-cache --config='jest.config.js'",
+    "test": "jest --no-cache",
     "release": "semantic-release"
   },
   "keywords": [],
@@ -53,6 +53,21 @@
     "tslint-config-common": "^1.6.2",
     "typescript": "^5.0.3",
     "tslib": "^2.6.2"
+  },
+  "jest": {
+    "verbose": true,
+    "testEnvironmentOptions": {
+      "url": "http://localhost/"
+    },
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.ts$": "ts-jest"
+    },
+    "transformIgnorePatterns": [],
+    "testRegex": ".*/(__tests__|__jest__|demo)/.*\\.(test|spec)\\.ts$"
   },
   "release": {
     "verifyConditions": [
