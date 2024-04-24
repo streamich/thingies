@@ -24,3 +24,4 @@ export * from './TimedState';
 export * from './types';
 export * from './until';
 export * from './xorshift';
+export * from './hasKeys';
