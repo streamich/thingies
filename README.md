@@ -128,6 +128,10 @@ Useful TypeScript utilities. [__Documentation__](https://streamich.github.io/thi
 browser across multiple tabs. Acquires a lock by writing to `localStorage` for
 a specific key for a specified duration.
 
+---
+
+- `hasKeys` &mdash; returns `true` if an object has at lest on key.
+
 
 ## License
 
