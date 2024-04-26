@@ -1,3 +1,10 @@
+# [1.21.0](https://github.com/streamich/thingies/compare/v1.20.0...v1.21.0) (2024-04-26)
+
+
+### Features
+
+* 🎸 add hasKeys() utility ([570ea5c](https://github.com/streamich/thingies/commit/570ea5cfcfa684dc4a451b192e4e8f8216bef93e))
+
 # [1.20.0](https://github.com/streamich/thingies/compare/v1.19.3...v1.20.0) (2024-04-01)
 
 
