@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">53.24% </span>
+                <span class="strong">51.35% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>41/77</span>
+                <span class='fraction'>38/74</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">46.66% </span>
+                <span class="strong">38.46% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>7/15</span>
+                <span class='fraction'>5/13</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">53.24% </span>
+                <span class="strong">51.35% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>41/77</span>
+                <span class='fraction'>38/74</span>
             </div>
         
             
@@ -191,7 +191,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">6x</span>
@@ -242,11 +241,8 @@
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-yes">9x</span>
@@ -268,7 +264,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -311,11 +306,16 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export interface CacheEntry&lt;T&gt; {
   t: number; // Time created.
   value: T;
-}
-<span class="fstat-no" title="function not covered" ></span>
+}<span class="fstat-no" title="function not covered" ></span>
+&nbsp;
 const noop = () =&gt; {};
 &nbsp;
 export class Cache&lt;T&gt; {
@@ -324,20 +324,20 @@ export class Cache&lt;T&gt; {
   gcPeriod = 30000; // How often to run GC.
   maxEntries = 100000;
 &nbsp;
-  private entries = 0; // Number of values in cache.
-  public map = new Ma<span class="fstat-no" title="function not covered" >p&lt;</span>string, CacheEntry&lt;T&gt;&gt;();
-  private timer: any; //<span class="cstat-no" title="statement not covered" > GC setTime</span>out Timer.
+  private entries = 0<span class="fstat-no" title="function not covered" >; </span>// Number of values in cache.
+  public map = new Map&lt;s<span class="cstat-no" title="statement not covered" >tring, Cach</span>eEntry&lt;T&gt;&gt;();
+  private ti<span class="cstat-no" title="statement not covered" >mer: any; // GC setTimeout Timer.</span>
 <span class="cstat-no" title="statement not covered" ></span>
-  constructor(public method: (<span class="cstat-no" title="statement not covered" >key: string) =&gt; Pr</span>omise&lt;T&gt; = noop as any) {}
+  constructor(pu<span class="cstat-no" title="statement not covered" >blic method: (key: string) =&gt; Promise&lt;T&gt; = noop as any) {}</span>
 <span class="cstat-no" title="statement not covered" ></span>
   put(key: string, v<span class="cstat-no" title="statement not covered" >alue: T) {</span>
-    const entry = {<span class="cstat-no" title="statement not covered" ></span>
+    const entry = {
       t: Date.now(),
-      value,
-    };<span class="cstat-no" title="statement not covered" ></span>
-    if (this.map.get(key)) {
-      this.map.set(key<span class="fstat-no" title="function not covered" >, </span>entry);
-    } else {<span class="cstat-no" title="statement not covered" ></span>
+      value,<span class="cstat-no" title="statement not covered" ></span>
+    };
+    if (this.map.get(k<span class="fstat-no" title="function not covered" >ey</span>)) {
+      this.m<span class="cstat-no" title="statement not covered" >ap.set(key, entry);</span>
+    } else {
       this.map.set(key, entry);
       this.entries++;
     }
@@ -351,13 +351,13 @@ export class Cache&lt;T&gt; {
       }
     }
   }
-&nbsp;
-  async <span class="missing-if-branch" title="if path not taken" >I</span>getFromSource(key: string): Promise&lt;T&gt; {
-    const va<span class="cstat-no" title="statement not covered" >lue = await this.method(key);</span>
-    this.put(key<span class="cstat-no" title="statement not covered" >, value);</span>
+<span class="missing-if-branch" title="if path not taken" >I</span>
+  async getF<span class="cstat-no" title="statement not covered" >romSource(key: string): Promise&lt;T&gt; {</span>
+    const value <span class="cstat-no" title="statement not covered" >= await this.method(key);</span>
+    this.put(key, va<span class="cstat-no" title="statement not covered" >lue);</span>
     return value;<span class="cstat-no" title="statement not covered" ></span>
   }<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" ></span>
+&nbsp;
   async get(key: string): Promise&lt;T&gt; {
     const entry = this.map.get(key);
     if (entry) {
@@ -387,51 +387,51 @@ export class Cache&lt;T&gt; {
       this.getFromSource(key).catch(noop);
       return entry.value;
     }
-    return null;
+<span class="fstat-no" title="function not covered" >    re</span>turn null;
+  }<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" ></span>
+  exists(key<span class="cstat-no" title="statement not covered" >: string): bo</span>olean {
+    const entry = th<span class="cstat-no" title="statement not covered" >is.map.get(</span>key);
+    if (<span class="cstat-no" title="statement not covered" >!entry) return false;</span>
+    const no<span class="cstat-no" title="statement not covered" >w = Date.now();</span>
+    return now - entry.t &lt;= this.evictionTime;
+  }<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" ></span>
+  scheduleGC<span class="cstat-no" title="statement not covered" >() {</span>
+    this.timer = setTimeout(this.runGC, this.gcPeriod);
+    this<span class="cstat-no" title="statement not covered" >.timer.unref(</span>);
   }
-&nbsp;
-  exists(key: string): boolean {
-    const entry = this.map.get(key);
-<span class="fstat-no" title="function not covered" >    if</span> (!entry) return false;
-    const now = Date.n<span class="cstat-no" title="statement not covered" >ow();</span>
-    retu<span class="cstat-no" title="statement not covered" >rn now - entry.t &lt;= this.evictionTime;</span>
-  }<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" ></span>
-  schedu<span class="cstat-no" title="statement not covered" >leGC() {</span>
-    this.tim<span class="cstat-no" title="statement not covered" >er = setTimeout(this</span>.runGC, this.gcPeriod);
-    this.timer.unref();
-  }<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" ></span>
-  startGC() <span class="cstat-no" title="statement not covered" >{</span>
-    this.scheduleGC();
-  }<span class="cstat-no" title="statement not covered" ></span>
-&nbsp;
-  ru<span class="fstat-no" title="function not covered" >nG</span>C = () =&gt; {
-    const now = Date.n<span class="cstat-no" title="statement not covered" >ow();</span>
-    for <span class="cstat-no" title="statement not covered" >(const key of this.map.keys()) {</span>
-      const <span class="cstat-no" title="statement not covered" >entry = this.m</span>ap.get(key);
-      if (entry &amp;&amp; n<span class="cstat-no" title="statement not covered" >ow - entry.</span>t &gt;= this.evictionTime) {
-<span class="cstat-no" title="statement not covered" >        this.map.delete(key);</span>
-        this.entries--;
-<span class="fstat-no" title="function not covered" ></span>      }
-    }<span class="cstat-no" title="statement not covered" ></span>
-    this<span class="cstat-no" title="statement not covered" >.scheduleGC();</span>
-  };
 <span class="fstat-no" title="function not covered" ></span>
-  stopGC<span class="cstat-no" title="statement not covered" > = () =&gt; {</span>
+  startGC() {<span class="cstat-no" title="statement not covered" ></span>
+    this<span class="cstat-no" title="statement not covered" >.scheduleGC();</span>
+  }<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" ></span>
+  runGC <span class="cstat-no" title="statement not covered" >= () =&gt; {</span>
+    const now = Date.now();
+<span class="fstat-no" title="function not covered" >    fo</span>r (const key of this.map.keys()) {
+      co<span class="cstat-no" title="statement not covered" >nst entry = this.map.get(key);</span>
+      if<span class="cstat-no" title="statement not covered" > (entry &amp;&amp; now - ent</span>ry.t &gt;= this.evictionTime) {
+        this.map.delete(key);
+<span class="fstat-no" title="function not covered" ></span>        this.entries--;
+      }<span class="cstat-no" title="statement not covered" ></span>
+    }
+    this.scheduleGC();
+  };
+<span class="missing-if-branch" title="if path not taken" >I</span>
+  stopGC = (<span class="cstat-no" title="statement not covered" >) =&gt; {</span>
     clearTimeout(this.timer);
   };
 &nbsp;
-  retire<span class="missing-if-branch" title="if path not taken" >I</span>(key: string, newTime: number = 0): boolean {
-    const en<span class="cstat-no" title="statement not covered" >try = this.map</span>.get(key);
-    if (!entry) return false;
-    entry.t = newTime;
-    return true;
-  }<span class="fstat-no" title="function not covered" ></span>
-<span class="cstat-no" title="statement not covered" ></span>
-  remove<span class="cstat-no" title="statement not covered" >(key: string): boolean {</span>
-    const su<span class="cstat-no" title="statement not covered" >ccess = this.map</span>.delete(key);
-    if (<span class="cstat-no" title="statement not covered" >success) this.en</span>tries--;
+  re<span class="fstat-no" title="function not covered" >ti</span>re(key: string, newTime: number = 0): boolean {
+    const entry = this.m<span class="cstat-no" title="statement not covered" >ap.get(key);</span>
+    if (<span class="cstat-no" title="statement not covered" >!entry) return false;</span>
+    entry.t <span class="cstat-no" title="statement not covered" >= newTime;</span>
+    retu<span class="cstat-no" title="statement not covered" >rn true;</span>
+  }
+&nbsp;
+  remove(key: string): boolean {
+    const success = this.map.delete(key);
+    if (success) this.entries--;
     return success;
   }
 }
@@ -442,7 +442,7 @@ export class Cache&lt;T&gt; {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-04-27T16:24:04.848Z
+                at 2024-04-27T16:35:22.488Z
             </div>
         <script src="prettify.js"></script>
         <script>
