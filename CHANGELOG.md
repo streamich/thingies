@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/streamich/thingies/compare/v1.21.0...v2.0.0) (2024-04-27)
+
+
+### Features
+
+* 🎸 release a single es2020 target ([87a9fb1](https://github.com/streamich/thingies/commit/87a9fb137e589bd28947aeb29b934aba865e90c1))
+
+
+### BREAKING CHANGES
+
+* 🧨 Produce only es2020 release artifacts
+
 # [1.21.0](https://github.com/streamich/thingies/compare/v1.20.0...v1.21.0) (2024-04-26)
 
 
