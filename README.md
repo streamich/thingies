@@ -1,6 +1,9 @@
 # thingies
 
-Useful TypeScript utilities. [__Documentation__](https://streamich.github.io/thingies).
+Useful TypeScript utilities.
+
+- [__Code reference__](https://streamich.github.io/thingies).
+- [__Test coverage__](https://streamich.github.io/thingies/coverage/lcov-report).
 
 
 ## Menu
