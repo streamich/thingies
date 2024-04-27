@@ -8,16 +8,18 @@
   },
   "homepage": "https://github.com/streamich/thingies",
   "repository": "streamich/thingies",
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/streamich"
+  },
   "license": "Unlicense",
   "engines": {
     "node": ">=10.18"
   },
   "main": "lib/index.js",
-  "module": "es6/index.js",
   "files": [
     "lib/",
-    "es6/",
-    "es2020/"
+    "LICENSE"
   ],
   "types": "lib/index.d.ts",
   "typings": "lib/index.d.ts",
@@ -27,10 +29,7 @@
     "tslint": "tslint 'src/**/*.{js,jsx,ts,tsx}' -t verbose",
     "lint": "yarn tslint",
     "clean": "rimraf lib es6 es2020 coverage typedocs gh-pages",
-    "build:cjs": "tsc",
-    "build:es6": "tsc --module commonjs --target es6 --outDir es6",
-    "build:es2020": "tsc --project tsconfig.build.json --module commonjs --target es2020 --outDir es2020",
-    "build": "yarn build:cjs && yarn build:es6 && yarn build:es2020",
+    "build": "tsc --project tsconfig.build.json --module commonjs --target es2020 --outDir lib",
     "test": "jest --no-cache --config='jest.config.js'",
     "coverage": "yarn test --collectCoverage",
     "typedoc": "npx typedoc@0.25.13 --tsconfig tsconfig.build.json",
