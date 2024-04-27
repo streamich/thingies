@@ -19,7 +19,7 @@ pids
 lib-cov
 
 # Coverage directory used by tools like istanbul
-coverage
+/coverage/
 *.lcov
 
 # nyc test coverage
@@ -122,3 +122,4 @@ es2020/
 
 /docs/
 /typedocs/
+/gh-pages/
