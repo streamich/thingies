@@ -1,11 +1,12 @@
-name: Node.js CI
+name: Release
 
 on:
   push:
-    branches: [ main ]
+    branches: [main, next]
 
 jobs:
   release:
+    if: ${{ github.event_name == 'push' && (github.event.ref == 'refs/heads/main' || github.event.ref == 'refs/heads/next') }}
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -17,9 +18,10 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: yarn
-      - run: yarn
-      - run: yarn test
+      - run: yarn install --frozen-lockfile
       - run: yarn build
+      - run: yarn prettier:check
+      - run: yarn test --maxWorkers 2
       - name: Semantic Release
         uses: cycjimmy/semantic-release-action@v4
         env:

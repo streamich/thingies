@@ -1,4 +1,4 @@
-name: Node CI
+name: PR Checks
 
 on:
   push:
@@ -21,4 +21,5 @@ jobs:
           cache: yarn
       - run: yarn
       - run: yarn build
+      - run: yarn prettier:check
       - run: yarn test --maxWorkers 2
