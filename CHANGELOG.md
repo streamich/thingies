@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/streamich/thingies/compare/v2.0.0...v2.1.0) (2024-04-28)
+
+
+### Features
+
+* 🎸 implement timeout() utility ([05c5339](https://github.com/streamich/thingies/commit/05c53395ba2ff11ce818683a0e9a54daa32028ae))
+
 # [2.0.0](https://github.com/streamich/thingies/compare/v1.21.0...v2.0.0) (2024-04-27)
 
 
