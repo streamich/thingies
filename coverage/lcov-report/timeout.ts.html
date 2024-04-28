@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for mutex.ts</title>
+    <title>Code coverage report for timeout.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="prettify.css" />
     <link rel="stylesheet" href="base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="index.html">All files</a> mutex.ts</h1>
+        <h1><a href="index.html">All files</a> timeout.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">84.61% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>19/19</span>
+                <span class='fraction'>11/13</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>6/6</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">80% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>5/5</span>
+                <span class='fraction'>4/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">81.81% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>17/17</span>
+                <span class='fraction'>9/11</span>
             </div>
         
             
@@ -88,56 +88,77 @@
 <a name='L23'></a><a href='#L23'>23</a>
 <a name='L24'></a><a href='#L24'>24</a>
 <a name='L25'></a><a href='#L25'>25</a>
-<a name='L26'></a><a href='#L26'>26</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">21x</span>
-<span class="cline-any cline-yes">21x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">21x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">21x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import {codeMutex} from './codeMutex';
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import type {Code} from './types';
 &nbsp;
 /**
- * Executes only one instance of give code at a time. For parallel calls, it
- * returns the result of the ongoing execution.
+ * Waits for given number of milliseconds before timing out. If provided code
+ * block does not complete within the given time, the promise will be rejected
+ * with `new Error('TIMEOUT')` error.
+ *
+ * ```ts
+ * const result = await timeout(1000, async () =&gt; {
+ *   return 123;
+ * });
+ * ```
+ *
+ * @param ms Number of milliseconds to wait before timing out.
+ * @param code Code block or promise to execute.
+ * @returns The result of the code block or promise.
  */
-export function mutex&lt;This, Args extends any[], Return&gt;(
-  fn: (this: This, ...args: Args) =&gt; Promise&lt;Return&gt;,
-  context?: ClassMethodDecoratorContext&lt;This, (this: This, ...args: Args) =&gt; Promise&lt;Return&gt;&gt;,
-) {
-  const isDecorator = !!context;
-  if (!isDecorator) {
-    const mut = codeMutex&lt;Return&gt;();
-    return async function (this: This, ...args: Args): Promise&lt;Return&gt; {
-      return await mut(async () =&gt; await fn.call(this, ...args));
-    };
-  }
-  const instances = new WeakMap&lt;any, WeakMap&lt;any, any&gt;&gt;();
-  return async function (this: This, ...args: Args): Promise&lt;Return&gt; {
-    let map = instances.get(this);
-    if (!map) instances.set(this, (map = new WeakMap&lt;any, any&gt;()));
-    if (!map.has(fn)) map.set(fn, codeMutex&lt;Return&gt;());
-    return await map.get(fn)!(async () =&gt; await fn.call(this, ...args));
-  };
-}
+export const timeout = &lt;T&gt;(ms: number, code: Code&lt;T&gt; | Promise&lt;T&gt;): Promise&lt;T&gt; =&gt;
+  new Promise&lt;T&gt;((resolve, reject) =&gt; {
+    const timer: any = setTimeout(() =&gt; reject(new Error('TIMEOUT')), ms);
+    const promise = typeof code === 'function' ? code() : code;
+    promise.then(
+      (result) =&gt; {
+        clearTimeout(timer);
+<span class="fstat-no" title="function not covered" >        r</span>esolve(result);
+      },<span class="cstat-no" title="statement not covered" ></span>
+      (e<span class="cstat-no" title="statement not covered" >rror) =&gt; {</span>
+        clearTimeout(timer);
+        reject(error);
+      },
+    );
+  });
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->

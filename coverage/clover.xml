@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1714235722504" clover="3.2.0">
-  <project timestamp="1714235722504" name="All files">
-    <metrics statements="368" coveredstatements="324" conditionals="116" coveredconditionals="85" methods="78" coveredmethods="66" elements="562" coveredelements="475" complexity="0" loc="368" ncloc="368" packages="1" files="21" classes="21"/>
+<coverage generated="1714306661014" clover="3.2.0">
+  <project timestamp="1714306661014" name="All files">
+    <metrics statements="379" coveredstatements="333" conditionals="118" coveredconditionals="87" methods="83" coveredmethods="70" elements="580" coveredelements="490" complexity="0" loc="379" ncloc="379" packages="1" files="22" classes="22"/>
     <file name="Cache.ts" path="/home/runner/work/thingies/thingies/src/Cache.ts">
       <metrics statements="74" coveredstatements="38" conditionals="30" coveredconditionals="12" methods="13" coveredmethods="5"/>
       <line num="2" count="1" type="stmt"/>
@@ -258,10 +258,10 @@
       <line num="8" count="2" type="stmt"/>
       <line num="10" count="13" type="stmt"/>
       <line num="11" count="57" type="cond" truecount="2" falsecount="0"/>
-      <line num="12" count="31" type="stmt"/>
-      <line num="13" count="26" type="stmt"/>
-      <line num="14" count="26" type="stmt"/>
-      <line num="17" count="26" type="stmt"/>
+      <line num="12" count="32" type="stmt"/>
+      <line num="13" count="25" type="stmt"/>
+      <line num="14" count="25" type="stmt"/>
+      <line num="17" count="25" type="stmt"/>
       <line num="21" count="2" type="stmt"/>
     </file>
     <file name="concurrency.ts" path="/home/runner/work/thingies/thingies/src/concurrency.ts">
@@ -414,10 +414,24 @@
     </file>
     <file name="tick.ts" path="/home/runner/work/thingies/thingies/src/tick.ts">
       <metrics statements="4" coveredstatements="4" conditionals="1" coveredconditionals="0" methods="2" coveredmethods="2"/>
-      <line num="2" count="5" type="stmt"/>
-      <line num="3" count="5" type="stmt"/>
-      <line num="4" count="976" type="cond" truecount="0" falsecount="1"/>
-      <line num="5" count="5" type="stmt"/>
+      <line num="2" count="6" type="stmt"/>
+      <line num="3" count="6" type="stmt"/>
+      <line num="4" count="978" type="cond" truecount="0" falsecount="1"/>
+      <line num="5" count="6" type="stmt"/>
+    </file>
+    <file name="timeout.ts" path="/home/runner/work/thingies/thingies/src/timeout.ts">
+      <metrics statements="11" coveredstatements="9" conditionals="2" coveredconditionals="2" methods="5" coveredmethods="4"/>
+      <line num="2" count="1" type="stmt"/>
+      <line num="3" count="1" type="stmt"/>
+      <line num="19" count="4" type="stmt"/>
+      <line num="20" count="4" type="stmt"/>
+      <line num="21" count="4" type="cond" truecount="2" falsecount="0"/>
+      <line num="22" count="4" type="stmt"/>
+      <line num="23" count="3" type="stmt"/>
+      <line num="24" count="3" type="stmt"/>
+      <line num="26" count="0" type="stmt"/>
+      <line num="27" count="0" type="stmt"/>
+      <line num="30" count="1" type="stmt"/>
     </file>
     <file name="xorshift.ts" path="/home/runner/work/thingies/thingies/src/xorshift.ts">
       <metrics statements="11" coveredstatements="11" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="2"/>
