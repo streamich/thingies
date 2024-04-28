@@ -1,10 +1,10 @@
-import type {Code} from "./types";
+import type {Code} from './types';
 
 /**
  * Waits for given number of milliseconds before timing out. If provided code
  * block does not complete within the given time, the promise will be rejected
  * with `new Error('TIMEOUT')` error.
- * 
+ *
  * ```ts
  * const result = await timeout(1000, async () => {
  *   return 123;
@@ -19,11 +19,14 @@ export const timeout = <T>(ms: number, code: Code<T> | Promise<T>): Promise<T> =
   new Promise<T>((resolve, reject) => {
     const timer: any = setTimeout(() => reject(new Error('TIMEOUT')), ms);
     const promise = typeof code === 'function' ? code() : code;
-    promise.then((result) => {
-      clearTimeout(timer);
-      resolve(result);
-    }, (error) => {
-      clearTimeout(timer);
-      reject(error);
-    });
+    promise.then(
+      (result) => {
+        clearTimeout(timer);
+        resolve(result);
+      },
+      (error) => {
+        clearTimeout(timer);
+        reject(error);
+      },
+    );
   });

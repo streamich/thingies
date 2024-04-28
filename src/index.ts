@@ -19,6 +19,7 @@ export * from './of';
 export * from './promiseMap';
 export * from './randomStr';
 export * from './tick';
+export * from './timeout';
 export * from './TimedQueue';
 export * from './TimedState';
 export * from './types';
