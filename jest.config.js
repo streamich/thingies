@@ -1,6 +1,5 @@
 module.exports = {
   verbose: true,
-  testURL: 'http://localhost/',
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   transform: {
     '^.+\.tsx?$': 'ts-jest',
