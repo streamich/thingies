@@ -135,6 +135,11 @@ a specific key for a specified duration.
 
 - `hasKeys` &mdash; returns `true` if an object has at lest on key.
 
+---
+
+- `timeout` &mdash; waits for async code to complete within a given time frame,
+  otherwise throws an error.
+
 
 ## License
 
