@@ -1,3 +1,10 @@
+## [2.1.1](https://github.com/streamich/thingies/compare/v2.1.0...v2.1.1) (2024-06-24)
+
+
+### Bug Fixes
+
+* correct license in package.json ([e39aace](https://github.com/streamich/thingies/commit/e39aaceba7ceb2d4630ba4e5eb18f81fa43a4d01))
+
 # [2.1.0](https://github.com/streamich/thingies/compare/v2.0.0...v2.1.0) (2024-04-28)
 
 
