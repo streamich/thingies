@@ -12,7 +12,7 @@
     "type": "github",
     "url": "https://github.com/sponsors/streamich"
   },
-  "license": "Unlicense",
+  "license": "MIT",
   "engines": {
     "node": ">=10.18"
   },
