@@ -4,7 +4,7 @@ export class LruCache<V> {
   protected map: Record<string, LruNode<V>> = Object.create(null);
   public size = 0;
 
-  constructor (public readonly limit: number = 1073741823) {}
+  constructor(public readonly limit: number = 1073741823) {}
 
   public set(key: string, value: V) {
     const node = this.map[key];
@@ -92,7 +92,7 @@ class LruNode<V> {
   public l: LruNode<V> | undefined = void 0;
   public r: LruNode<V> | undefined = void 0;
 
-  constructor (
+  constructor(
     public readonly k: string,
     public v: V,
   ) {}
