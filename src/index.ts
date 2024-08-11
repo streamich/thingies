@@ -12,6 +12,7 @@ export * from './hash';
 export * from './loadCss';
 export * from './Locks';
 export * from './LruMap';
+export * from './LruCache';
 export * from './LruTtlMap';
 export * from './mutex';
 export * from './normalizeEmail';

@@ -1,5 +1,7 @@
 import {concurrency as _concurrency} from './concurrency';
 
+/* tslint:disable no-invalid-this */
+
 const instances = new WeakMap<any, WeakMap<any, any>>();
 
 /**

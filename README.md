@@ -38,6 +38,11 @@ Useful TypeScript utilities.
 
 ---
 
+- `LruCache` &mdash; a *Least Recently Used Cache* implemented using `Object` and doubly linked list.
+  The default limit is around 1 billion items (2^30 - 1).
+
+---
+
 - `normalizeEmail` &mdash; normalizes email by stripping out `.` and `+` characters and
   removing everything after the `+` character and lower-casing the e-mail. Useful for
   getting an e-mail into a common form when throttling requests by e-mail.

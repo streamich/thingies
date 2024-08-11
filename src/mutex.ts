@@ -1,5 +1,7 @@
 import {codeMutex} from './codeMutex';
 
+/* tslint:disable no-invalid-this */
+
 /**
  * Executes only one instance of give code at a time. For parallel calls, it
  * returns the result of the ongoing execution.
