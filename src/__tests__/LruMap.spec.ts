@@ -161,4 +161,17 @@ describe('LruMap', () => {
     expect(cache.get('a')).toBe('AA');
     expect(cache.get('b')).toBe(undefined);
   });
+
+  test('refreshes access time of `undefined` values', () => {
+    const cache = new LruMap(3);
+    cache.set('u', undefined);
+    cache.set('b', 'B');
+    cache.set('c', 'C');
+    cache.get('u');
+    cache.set('d', 'D');
+    expect(cache.has('u')).toBe(true);
+    expect(cache.has('b')).toBe(false);
+    expect(cache.has('c')).toBe(true);
+    expect(cache.has('d')).toBe(true);
+  });
 });
