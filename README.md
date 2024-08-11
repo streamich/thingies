@@ -28,11 +28,6 @@ Useful TypeScript utilities.
 
 ---
 
-- `LruCache` &mdash; a *Least Recently Used Cache* implemented using `Object` and doubly linked list.
-  The default limit is around 1 billion items (2^30 - 1).
-
----
-
 - `LruMap` &mdash; tiny and fast *Least Recently Used Cache* implemented on top of the `Map` class.
   The default limit is around 1 billion items (2^30 - 1).
 
@@ -40,6 +35,11 @@ Useful TypeScript utilities.
 
 - `LruTtlMap` &mdash; tiny and fast *Least Recently Used Cache* with expiration timestamp
   stored for each entry implemented on top of the `LruMap` class.
+
+---
+
+- `LruCache` &mdash; a *Least Recently Used Cache* implemented using `Object` and doubly linked list.
+  The default limit is around 1 billion items (2^30 - 1).
 
 ---
 
