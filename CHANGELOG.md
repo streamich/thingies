@@ -1,3 +1,20 @@
+# [2.3.0](https://github.com/streamich/thingies/compare/v2.2.0...v2.3.0) (2024-08-11)
+
+
+### Bug Fixes
+
+* 🐛 support undefined item value refresh ([2afccbb](https://github.com/streamich/thingies/commit/2afccbb8bace8243708c0e17e993d2b85637f363))
+
+
+### Features
+
+* 🎸 improve performance in key retrieval ([4dd435c](https://github.com/streamich/thingies/commit/4dd435c96f1e01e48231a92f943e3d2d89639740))
+
+
+### Performance Improvements
+
+* ⚡️ use integer as default LRU limit ([5b55327](https://github.com/streamich/thingies/commit/5b55327a5a1fb0b3abf4fada196dbbb5f6ac0860))
+
 # [2.2.0](https://github.com/streamich/thingies/compare/v2.1.1...v2.2.0) (2024-08-11)
 
 
