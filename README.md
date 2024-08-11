@@ -29,6 +29,7 @@ Useful TypeScript utilities.
 ---
 
 - `LruMap` &mdash; tiny and fast *Least Recently Used Cache* implemented on top of the `Map` class.
+  The default limit is around 1 billion items (2^30 - 1).
 
 ---
 
