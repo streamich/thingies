@@ -30,7 +30,7 @@ test('throws TIMEOUT when running longer than timeout time', async () => {
       await tick(500);
       return '123';
     });
-    throw 'not this';
+    throw new Error('not this');
   } catch (error) {
     expect(error).toEqual(new Error('TIMEOUT'));
     const end = Date.now();

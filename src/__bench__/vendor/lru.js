@@ -1,3 +1,5 @@
+/* tslint:disable */
+
 module.exports = function (size) {
   return new LruCache(size);
 };
