@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1722834039089" clover="3.2.0">
-  <project timestamp="1722834039089" name="All files">
-    <metrics statements="376" coveredstatements="330" conditionals="118" coveredconditionals="87" methods="83" coveredmethods="70" elements="577" coveredelements="487" complexity="0" loc="376" ncloc="376" packages="1" files="22" classes="22"/>
+<coverage generated="1723366934021" clover="3.2.0">
+  <project timestamp="1723366934021" name="All files">
+    <metrics statements="377" coveredstatements="331" conditionals="120" coveredconditionals="89" methods="83" coveredmethods="70" elements="580" coveredelements="490" complexity="0" loc="377" ncloc="377" packages="1" files="22" classes="22"/>
     <file name="Cache.ts" path="/home/runner/work/thingies/thingies/src/Cache.ts">
       <metrics statements="74" coveredstatements="38" conditionals="30" coveredconditionals="12" methods="13" coveredmethods="5"/>
       <line num="2" count="1" type="stmt"/>
@@ -136,22 +136,23 @@
       <line num="78" count="0" type="stmt"/>
     </file>
     <file name="LruMap.ts" path="/home/runner/work/thingies/thingies/src/LruMap.ts">
-      <metrics statements="15" coveredstatements="15" conditionals="5" coveredconditionals="4" methods="3" coveredmethods="3"/>
+      <metrics statements="16" coveredstatements="16" conditionals="7" coveredconditionals="6" methods="3" coveredmethods="3"/>
       <line num="2" count="2" type="stmt"/>
       <line num="3" count="2" type="stmt"/>
-      <line num="6" count="15" type="stmt"/>
-      <line num="7" count="15" type="stmt"/>
-      <line num="10" count="79" type="stmt"/>
-      <line num="11" count="79" type="cond" truecount="2" falsecount="0"/>
-      <line num="12" count="15" type="stmt"/>
-      <line num="13" count="79" type="stmt"/>
-      <line num="16" count="43" type="cond" truecount="2" falsecount="0"/>
-      <line num="17" count="6" type="stmt"/>
-      <line num="18" count="37" type="stmt"/>
-      <line num="19" count="37" type="stmt"/>
-      <line num="20" count="37" type="stmt"/>
-      <line num="21" count="37" type="stmt"/>
-      <line num="24" count="2" type="stmt"/>
+      <line num="8" count="22" type="stmt"/>
+      <line num="9" count="22" type="stmt"/>
+      <line num="12" count="108" type="stmt"/>
+      <line num="13" count="108" type="stmt"/>
+      <line num="14" count="108" type="cond" truecount="2" falsecount="0"/>
+      <line num="15" count="19" type="stmt"/>
+      <line num="16" count="108" type="stmt"/>
+      <line num="19" count="70" type="stmt"/>
+      <line num="20" count="70" type="cond" truecount="2" falsecount="0"/>
+      <line num="21" count="11" type="cond" truecount="2" falsecount="0"/>
+      <line num="22" count="59" type="stmt"/>
+      <line num="23" count="59" type="stmt"/>
+      <line num="24" count="59" type="stmt"/>
+      <line num="27" count="2" type="stmt"/>
     </file>
     <file name="LruTtlMap.ts" path="/home/runner/work/thingies/thingies/src/LruTtlMap.ts">
       <metrics statements="25" coveredstatements="25" conditionals="10" coveredconditionals="9" methods="6" coveredmethods="6"/>
@@ -162,8 +163,8 @@
       <line num="8" count="9" type="stmt"/>
       <line num="11" count="1" type="stmt"/>
       <line num="12" count="1" type="stmt"/>
-      <line num="15" count="11" type="stmt"/>
-      <line num="16" count="11" type="stmt"/>
+      <line num="15" count="2" type="stmt"/>
+      <line num="16" count="2" type="stmt"/>
       <line num="19" count="31" type="cond" truecount="2" falsecount="0"/>
       <line num="20" count="6" type="stmt"/>
       <line num="21" count="25" type="cond" truecount="1" falsecount="1"/>
