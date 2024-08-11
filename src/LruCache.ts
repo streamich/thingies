@@ -78,8 +78,10 @@ export class LruCache<V> {
   protected pop(node: LruNode<V>): void {
     const l = node.l;
     const r = node.r;
-    if (this.head === node) this.head = r; else l!.r = r;
-    if (this.tail === node) this.tail = l; else r!.l = l;
+    if (this.head === node) this.head = r;
+    else l!.r = r;
+    if (this.tail === node) this.tail = l;
+    else r!.l = l;
     // node.l = undefined;
     // node.r = undefined;
   }
