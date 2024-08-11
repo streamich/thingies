@@ -1,3 +1,15 @@
+# [2.2.0](https://github.com/streamich/thingies/compare/v2.1.1...v2.2.0) (2024-08-11)
+
+
+### Bug Fixes
+
+* 🐛 if set has size, it always has at least one value ([123ce39](https://github.com/streamich/thingies/commit/123ce39e354da241181f08f7cad0625c69e780bf))
+
+
+### Features
+
+* 🎸 remove extra check at read ([3a08a95](https://github.com/streamich/thingies/commit/3a08a954685f08467fdb7c723bcead770a48832b))
+
 ## [2.1.1](https://github.com/streamich/thingies/compare/v2.1.0...v2.1.1) (2024-06-24)
 
 
