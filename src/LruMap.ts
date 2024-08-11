@@ -6,7 +6,7 @@ export class LruMap<K, V> extends Map<K, V> {
   public set(key: K, value: V): this {
     super.delete(key);
     super.set(key, value);
-    if (this.size > this.limit) this.delete(super.keys().next().value!);
+    if (super.size > this.limit) super.delete(super.keys().next().value!);
     return this;
   }
 
