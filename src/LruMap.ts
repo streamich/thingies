@@ -1,5 +1,8 @@
 export class LruMap<K, V> extends Map<K, V> {
-  constructor(public readonly limit: number = Infinity) {
+  constructor(
+    // 2^30 - 1 (a SMI in V8, for 32-bit platforms)
+    public readonly limit: number = 1073741823,
+  ) {
     super();
   }
 
