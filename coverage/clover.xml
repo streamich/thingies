@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1723382438742" clover="3.2.0">
-  <project timestamp="1723382438742" name="All files">
+<coverage generated="1724039497749" clover="3.2.0">
+  <project timestamp="1724039497749" name="All files">
     <metrics statements="443" coveredstatements="387" conditionals="141" coveredconditionals="103" methods="95" coveredmethods="80" elements="679" coveredelements="570" complexity="0" loc="443" ncloc="443" packages="1" files="23" classes="23"/>
     <file name="Cache.ts" path="/home/runner/work/thingies/thingies/src/Cache.ts">
       <metrics statements="74" coveredstatements="38" conditionals="30" coveredconditionals="12" methods="13" coveredmethods="5"/>
