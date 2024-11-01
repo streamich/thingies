@@ -23,7 +23,7 @@ Useful TypeScript utilities.
 
 ---
 
-- `@debug` &mdash; an async class class method or function decorator, which logs
+- `@debug` &mdash; a class method or function decorator, which logs
   the input and output of the function in non-production environments.
 
 ---
