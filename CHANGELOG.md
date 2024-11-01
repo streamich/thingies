@@ -1,3 +1,34 @@
+# [2.4.0](https://github.com/streamich/thingies/compare/v2.3.0...v2.4.0) (2024-08-11)
+
+
+### Features
+
+* 🎸 expose LruCache, add to README, run Prettier ([0e0412e](https://github.com/streamich/thingies/commit/0e0412e23cb43b4a06326c89b7c2c3855ffc3d63))
+* 🎸 implement LruCache ([85c28a3](https://github.com/streamich/thingies/commit/85c28a32bcde0ce9e1d98e45ae4542302bff0450))
+* 🎸 improve LRU cache implementation ([aa0bfcf](https://github.com/streamich/thingies/commit/aa0bfcfcf669ba577c846fa4b284c26b076f3e9c))
+
+
+### Performance Improvements
+
+* ⚡️ add LRU cache benchmarks ([be9a9c7](https://github.com/streamich/thingies/commit/be9a9c7d5a2347aa3f198f3a21030117aa43b658))
+
+# [2.3.0](https://github.com/streamich/thingies/compare/v2.2.0...v2.3.0) (2024-08-11)
+
+
+### Bug Fixes
+
+* 🐛 support undefined item value refresh ([2afccbb](https://github.com/streamich/thingies/commit/2afccbb8bace8243708c0e17e993d2b85637f363))
+
+
+### Features
+
+* 🎸 improve performance in key retrieval ([4dd435c](https://github.com/streamich/thingies/commit/4dd435c96f1e01e48231a92f943e3d2d89639740))
+
+
+### Performance Improvements
+
+* ⚡️ use integer as default LRU limit ([5b55327](https://github.com/streamich/thingies/commit/5b55327a5a1fb0b3abf4fada196dbbb5f6ac0860))
+
 # [2.2.0](https://github.com/streamich/thingies/compare/v2.1.1...v2.2.0) (2024-08-11)
 
 
