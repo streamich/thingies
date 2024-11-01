@@ -1,3 +1,11 @@
+# [2.5.0](https://github.com/streamich/thingies/compare/v2.4.0...v2.5.0) (2024-11-01)
+
+
+### Features
+
+* 🎸 add debug decorator ([19a3c19](https://github.com/streamich/thingies/commit/19a3c19dd10f1658ceb33ec982f1bd1c666231fb))
+* 🎸 add support for sync functions ([a40c08a](https://github.com/streamich/thingies/commit/a40c08a8e2e36e9b0f46bd39ec0b05483907686d))
+
 # [2.4.0](https://github.com/streamich/thingies/compare/v2.3.0...v2.4.0) (2024-08-11)
 
 
