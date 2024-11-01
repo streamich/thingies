@@ -23,6 +23,11 @@ Useful TypeScript utilities.
 
 ---
 
+- `@debug` &mdash; a class method or function decorator, which logs
+  the input and output of the function in non-production environments.
+
+---
+
 - `hash` &mdash; a fast and simple utility, which hashes a string to an integer. Useful
   for generating a shard index of a record based on its ID.
 

@@ -27,7 +27,7 @@ const caches: Cache[] = [
     create: (limit: number) => lru(limit),
   },
 ];
-const limits = [10, 100, 1000, 10000];
+const limits = [10, 100, 1000, 10000, 100000];
 // const iterations = [10, 100, 1000, 10000];
 const iterations = [1000000];
 // const reads = [true, false];

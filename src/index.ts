@@ -5,6 +5,7 @@ export * from './concurrency';
 export {once} from './once';
 export {concurrency as concurrencyDecorator} from './concurrencyDecorator';
 export * from './dataUri';
+export * from './debug';
 export * from './Defer';
 export * from './fanout';
 export * from './go';
