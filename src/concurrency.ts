@@ -15,6 +15,9 @@ class Task<T = unknown> {
 
 /** Limits concurrency of async code. */
 export const concurrency = (limit: number) => {
+  // Ensure limit is a valid positive number, defaulting to 1 for invalid values
+  const effectiveLimit = Math.max(1, Math.floor(Number.isFinite(limit) ? limit : 1));
+  
   let workers = 0;
   const queue = new Set<Task>();
   const work = async () => {
@@ -27,12 +30,14 @@ export const concurrency = (limit: number) => {
     } catch (error) {
       task.reject(error);
     } finally {
-      workers--, queue.size && go(work);
+      workers--;
+      if (queue.size) go(work);
     }
   };
   return async <T = unknown>(code: Code<T>): Promise<T> => {
     const task = new Task(code);
     queue.add(task as Task<unknown>);
-    return workers < limit && go(work), task.promise;
+    if (workers < effectiveLimit) go(work);
+    return task.promise;
   };
 };
