@@ -145,6 +145,13 @@ a specific key for a specified duration.</li>
 </ul>
 <hr>
 <ul>
+<li><code>Value</code> and <code>Computed</code> &mdash; reactive synchronous state primitives compatible with
+React&#39;s <code>useSyncExternalStore</code>. <code>Value</code> holds a single value and notifies subscribers
+on change. <code>Computed</code> derives a cached value from one or more <code>Value</code> dependencies and
+recomputes automatically when they change. Factory helpers: <code>val()</code> and <code>comp()</code>.</li>
+</ul>
+<hr>
+<ul>
 <li><code>timeout</code> &mdash; waits for async code to complete within a given time frame,
 otherwise throws an error.</li>
 </ul>
