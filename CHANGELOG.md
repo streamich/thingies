@@ -1,3 +1,10 @@
+# [2.6.0](https://github.com/streamich/thingies/compare/v2.5.0...v2.6.0) (2026-03-20)
+
+
+### Features
+
+* 🎸 add sync primitives ([9345330](https://github.com/streamich/thingies/commit/934533043c02e7d2d1c513852c2d273e8dad24fb))
+
 # [2.5.0](https://github.com/streamich/thingies/compare/v2.4.0...v2.5.0) (2024-11-01)
 
 
