@@ -289,7 +289,7 @@ describe('sentinel cache (undefined support)', () => {
 
   test('Computed correctly transitions from undefined to a value', () => {
     const a = val<number | null>(null);
-    const c = comp([a], ([x]: [number | null]) => x === null ? undefined : x * 2);
+    const c = comp([a], ([x]: [number | null]) => (x === null ? undefined : x * 2));
     expect(c.value).toBeUndefined();
     a.next(3);
     expect(c.value).toBe(6);

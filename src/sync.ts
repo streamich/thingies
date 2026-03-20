@@ -28,7 +28,7 @@ export class Value<V> extends FanOut<void> implements SyncStore<V>, SyncValue<V>
   constructor(value: V) {
     super();
     this.value = value;
-  } 
+  }
 
   public next(value: V, force = false): void {
     if (!force && this.value === value) return;
@@ -46,16 +46,19 @@ export class Value<V> extends FanOut<void> implements SyncStore<V>, SyncValue<V>
   public readonly getSnapshot: () => V = () => this.value;
 }
 
-export class Computed<N, V extends unknown[] = any> extends FanOut<void> implements SyncValue<N>, SyncStore<N>, Disposable {
+export class Computed<N, V extends unknown[] = any>
+  extends FanOut<void>
+  implements SyncValue<N>, SyncStore<N>, Disposable
+{
   private cache: N | typeof NO_CACHE = NO_CACHE;
   private subs: SyncStoreUnsubscribe[];
 
   constructor(
     protected readonly deps: WrapListInSyncDep<V>,
-    protected readonly compute: (args: V) => N
+    protected readonly compute: (args: V) => N,
   ) {
     super();
-    const subs = this.subs = [] as SyncStoreUnsubscribe[];
+    const subs = (this.subs = [] as SyncStoreUnsubscribe[]);
     const length = deps.length;
     for (let i = 0; i < length; i++) {
       const dep = deps[i];
@@ -70,7 +73,7 @@ export class Computed<N, V extends unknown[] = any> extends FanOut<void> impleme
   private _comp(): N {
     const cached = this.cache;
     if (cached !== NO_CACHE) return cached;
-    return this.cache = this.compute(this.deps.map((dep) => dep.getSnapshot()) as V);
+    return (this.cache = this.compute(this.deps.map((dep) => dep.getSnapshot()) as V));
   }
 
   /** ----------------------------------------------------- {@link SyncValue} */
@@ -92,7 +95,5 @@ export class Computed<N, V extends unknown[] = any> extends FanOut<void> impleme
 }
 
 export const val = <V>(initial: V): Value<V> => new Value(initial);
-export const comp = <V extends unknown[], N>(
-  deps: WrapListInSyncDep<V>,
-  compute: (args: V) => N,
-): Computed<N, V> => new Computed(deps, compute);
+export const comp = <V extends unknown[], N>(deps: WrapListInSyncDep<V>, compute: (args: V) => N): Computed<N, V> =>
+  new Computed(deps, compute);
