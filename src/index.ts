@@ -28,3 +28,4 @@ export * from './types';
 export * from './until';
 export * from './xorshift';
 export * from './hasKeys';
+export * from './sync';

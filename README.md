@@ -148,6 +148,13 @@ a specific key for a specified duration.
 
 ---
 
+- `Value` and `Computed` &mdash; reactive synchronous state primitives compatible with
+  React's `useSyncExternalStore`. `Value` holds a single value and notifies subscribers
+  on change. `Computed` derives a cached value from one or more `Value` dependencies and
+  recomputes automatically when they change. Factory helpers: `val()` and `comp()`.
+
+---
+
 - `timeout` &mdash; waits for async code to complete within a given time frame,
   otherwise throws an error.
 
