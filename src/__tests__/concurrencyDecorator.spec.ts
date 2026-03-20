@@ -52,18 +52,18 @@ test(`limits concurrency separately per method`, async () => {
   }
   const promises: Promise<any>[] = [];
   const a = new A();
-  promises.push(a.a(3));
-  promises.push(a.a(4));
   promises.push(a.a(10));
-  promises.push(a.b(2));
-  promises.push(a.b(3));
-  promises.push(a.b(4));
-  await tick(5);
-  expect(resA).toStrictEqual([3, 4]);
-  expect(resB).toStrictEqual([2, 3, 4]);
+  promises.push(a.a(20));
+  promises.push(a.a(100));
+  promises.push(a.b(10));
+  promises.push(a.b(20));
+  promises.push(a.b(30));
+  await tick(50);
+  expect(resA).toStrictEqual([10, 20]);
+  expect(resB).toStrictEqual([10, 20, 30]);
   await Promise.all(promises);
-  expect(resA).toStrictEqual([3, 4, 10]);
-  expect(resB).toStrictEqual([2, 3, 4]);
+  expect(resA).toStrictEqual([10, 20, 100]);
+  expect(resB).toStrictEqual([10, 20, 30]);
 });
 
 test(`limits concurrency separately per instance`, async () => {
@@ -80,18 +80,18 @@ test(`limits concurrency separately per instance`, async () => {
   const promises: Promise<any>[] = [];
   const a = new A(resA);
   const b = new A(resB);
-  promises.push(a.a(4));
-  promises.push(a.a(4));
   promises.push(a.a(10));
-  promises.push(b.a(3));
-  promises.push(b.a(3));
-  promises.push(b.a(11));
-  await tick(5);
-  expect(resA).toStrictEqual([4, 4]);
-  expect(resB).toStrictEqual([3, 3]);
+  promises.push(a.a(10));
+  promises.push(a.a(100));
+  promises.push(b.a(10));
+  promises.push(b.a(10));
+  promises.push(b.a(100));
+  await tick(50);
+  expect(resA).toStrictEqual([10, 10]);
+  expect(resB).toStrictEqual([10, 10]);
   await Promise.all(promises);
-  expect(resA).toStrictEqual([4, 4, 10]);
-  expect(resB).toStrictEqual([3, 3, 11]);
+  expect(resA).toStrictEqual([10, 10, 100]);
+  expect(resB).toStrictEqual([10, 10, 100]);
 });
 
 describe('limits concurrency to 1', () => {
