@@ -1,5 +1,8 @@
 import {LruTtlMap} from '../LruTtlMap';
 
+/** Size of the internal expiry side-map, which should never outgrow the map itself. */
+const expirySize = (lru: LruTtlMap<any, any>): number => (lru as any).expiry.size;
+
 describe('LruTtlMap', () => {
   test('.get() / .set() / .size', () => {
     const lru = new LruTtlMap(123);
@@ -101,6 +104,68 @@ describe('LruTtlMap', () => {
     expect(lru.get('1', 123)).toBe(1);
     lru.set('2', 2, 10);
     expect(lru.get('2', 11)).toBe(undefined);
+  });
+
+  test('does not leak expiry entries when keys are evicted by the LRU limit', () => {
+    const lru = new LruTtlMap<string, number>(4);
+    const deadline = Date.now() + 100000;
+    for (let i = 0; i < 1000; i++) lru.set(String(i), i, deadline);
+    expect(lru.size).toBe(4);
+    expect(expirySize(lru)).toBe(4);
+  });
+
+  test('does not leak expiry entries when keys are overwritten', () => {
+    const lru = new LruTtlMap<string, number>(4);
+    for (let i = 0; i < 100; i++) lru.set('1', i, Date.now() + 100000);
+    expect(lru.size).toBe(1);
+    expect(expirySize(lru)).toBe(1);
+  });
+
+  test('does not leak expiry entries when the limit is zero', () => {
+    const lru = new LruTtlMap<string, number>(0);
+    for (let i = 0; i < 100; i++) lru.set(String(i), i, Date.now() + 100000);
+    expect(lru.size).toBe(0);
+    expect(expirySize(lru)).toBe(0);
+  });
+
+  test('.clear() empties the expiry map', () => {
+    const lru = new LruTtlMap<string, number>(4);
+    lru.set('1', 1, Date.now() + 100000);
+    lru.set('2', 2);
+    lru.clear();
+    expect(lru.size).toBe(0);
+    expect(expirySize(lru)).toBe(0);
+  });
+
+  test('.delete() removes the expiry entry', () => {
+    const lru = new LruTtlMap<string, number>(4);
+    lru.set('1', 1, Date.now() + 100000);
+    expect(lru.delete('1')).toBe(true);
+    expect(expirySize(lru)).toBe(0);
+  });
+
+  test('expires entries when `now` is not given', () => {
+    const lru = new LruTtlMap<string, boolean>(4);
+    lru.set('x', true, Date.now() - 10000);
+    expect(lru.has('x')).toBe(false);
+    expect(lru.get('x')).toBe(undefined);
+    expect(lru.size).toBe(0);
+    expect(expirySize(lru)).toBe(0);
+  });
+
+  test('returns not-yet-expired entries when `now` is not given', () => {
+    const lru = new LruTtlMap<string, boolean>(4);
+    lru.set('x', true, Date.now() + 10000);
+    expect(lru.has('x')).toBe(true);
+    expect(lru.get('x')).toBe(true);
+  });
+
+  test('entries without an explicit expiry never expire', () => {
+    const lru = new LruTtlMap<string, boolean>(4);
+    lru.set('x', true);
+    expect(lru.has('x')).toBe(true);
+    expect(lru.get('x')).toBe(true);
+    expect(lru.has('x', Date.now() + 1000000)).toBe(true);
   });
 
   test('when item accessed multiple times it keeps its expiry time', () => {
