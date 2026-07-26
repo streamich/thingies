@@ -1,3 +1,10 @@
+## [2.6.1](https://github.com/streamich/thingies/compare/v2.6.0...v2.6.1) (2026-07-26)
+
+
+### Bug Fixes
+
+* 🐛 improve `LruTtlMap` ([5d39dc6](https://github.com/streamich/thingies/commit/5d39dc61ec7e8e7fdfff0c09b9493cdfd7ce5468))
+
 # [2.6.0](https://github.com/streamich/thingies/compare/v2.5.0...v2.6.0) (2026-03-20)
 
 
